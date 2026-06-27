@@ -4,7 +4,10 @@ const listings = [
     category: "Casino & Entertainment",
     origin: "Antalya, Turkey",
     seller: "Verified cruise liquidator",
-    price: "From €1,450 each",
+    price: "From €1,950 each",
+    estimatedNewValue: "€4,000",
+    salvagePrice: "€1,950",
+    saving: "51%",
     badge: "Cruise casino lot",
     quantity: "8 roulette tables available",
     buyerUse:
@@ -21,6 +24,9 @@ const listings = [
     origin: "Izmir, Turkey",
     seller: "Verified shipyard broker",
     price: "€145 per chair",
+    estimatedNewValue: "€430",
+    salvagePrice: "€145",
+    saving: "66%",
     badge: "Deck seating lot",
     quantity: "180 chairs available",
     buyerUse:
@@ -37,6 +43,9 @@ const listings = [
     origin: "Genoa, Italy",
     seller: "Verified cruise inventory seller",
     price: "From €85 per seat",
+    estimatedNewValue: "€350",
+    salvagePrice: "€85",
+    saving: "76%",
     badge: "Cruise theater lot",
     quantity: "320 seats available",
     buyerUse:
@@ -53,6 +62,9 @@ const listings = [
     origin: "Hamburg, Germany",
     seller: "Verified marine reseller",
     price: "From €65 per item",
+    estimatedNewValue: "€180",
+    salvagePrice: "€65",
+    saving: "64%",
     badge: "Dining room lot",
     quantity: "240 chairs + 60 tables",
     buyerUse:
@@ -69,6 +81,9 @@ const listings = [
     origin: "Edinburgh, United Kingdom",
     seller: "Verified hospitality liquidator",
     price: "From €90 per item",
+    estimatedNewValue: "€250",
+    salvagePrice: "€90",
+    saving: "64%",
     badge: "Ship bar package",
     quantity: "42 stools + bar counter",
     buyerUse:
@@ -85,6 +100,9 @@ const listings = [
     origin: "Marseille, France",
     seller: "Verified interior broker",
     price: "From €120 per set",
+    estimatedNewValue: "€350",
+    salvagePrice: "€120",
+    saving: "66%",
     badge: "Ship cabin lot",
     quantity: "80 cabin sets available",
     buyerUse:
@@ -100,6 +118,9 @@ const listings = [
     origin: "Edinburgh, United Kingdom",
     seller: "Verified interior broker",
     price: "From €2,400 per set",
+    estimatedNewValue: "€5,000",
+    salvagePrice: "€2,400",
+    saving: "52%",
     badge: "Royal yacht interior",
     quantity: "12 lounge sets available",
     buyerUse:
@@ -115,7 +136,10 @@ const listings = [
     category: "Luxury Cruise Interior",
     origin: "Dover, United Kingdom",
     seller: "Verified cruise interior seller",
-    price: "On request",
+    price: "From €1,400 per piece",
+    estimatedNewValue: "€3,500",
+    salvagePrice: "€1,400",
+    saving: "60%",
     badge: "Cruise atrium lot",
     quantity: "6 statement pieces",
     buyerUse:
@@ -790,6 +814,63 @@ a {
   font-size: 14px;
 }
 
+.valueBox {
+  margin: 16px 0;
+  padding: 14px;
+  border-radius: 22px;
+  background: linear-gradient(145deg, #fff7e8 0%, #ead7b4 100%);
+  border: 1px solid rgba(200,149,61,0.32);
+}
+
+.valueRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: baseline;
+  padding: 7px 0;
+  border-bottom: 1px solid rgba(16,24,39,0.08);
+}
+
+.valueRow:last-child {
+  border-bottom: 0;
+}
+
+.valueLabel {
+  color: #6b7280;
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.045em;
+}
+
+.valueOld {
+  color: #6b7280;
+  font-size: 15px;
+  font-weight: 950;
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+
+.valueNew {
+  color: #101827;
+  font-size: 19px;
+  font-weight: 950;
+  letter-spacing: -0.04em;
+}
+
+.valueSaving {
+  color: #0f6b3f;
+  font-size: 18px;
+  font-weight: 950;
+}
+
+.valueNote {
+  margin: 8px 0 0;
+  color: #6b7280;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
 .metaGrid {
   display: grid;
   grid-template-columns: 1fr;
@@ -1192,9 +1273,9 @@ export default function Home() {
               </div>
 
               <div className="statCard">
-                <strong className="statValue">Safe</strong>
+                <strong className="statValue">Save</strong>
                 <span className="statLabel">
-                  Payment released after buyer approval
+                  Demo listings show estimated savings versus buying new
                 </span>
               </div>
             </div>
@@ -1218,8 +1299,9 @@ export default function Home() {
                 <h2>{featured.title}</h2>
 
                 <p>
-                  {featured.quantity} · {featured.seller} · payment released
-                  after buyer approval.
+                  Estimated new value {featured.estimatedNewValue} · Salvage
+                  Harbor price {featured.salvagePrice} · potential saving{" "}
+                  {featured.saving}.
                 </p>
 
                 <a
@@ -1385,9 +1467,9 @@ export default function Home() {
             </div>
 
             <p className="sectionIntro">
-              Every listing shows origin, quantity, verified seller status,
-              price, 10% commission model, secure payment protection and a
-              clickable photo source.
+              Every demo listing shows estimated new value, Salvage Harbor
+              price, potential saving, origin, quantity, seller status and
+              payment protection.
             </p>
           </div>
 
@@ -1412,6 +1494,28 @@ export default function Home() {
                   <span className="quantityBox">{item.quantity}</span>
 
                   <p className="buyerUse">{item.buyerUse}</p>
+
+                  <div className="valueBox">
+                    <div className="valueRow">
+                      <span className="valueLabel">Estimated new value</span>
+                      <span className="valueOld">{item.estimatedNewValue}</span>
+                    </div>
+
+                    <div className="valueRow">
+                      <span className="valueLabel">Salvage Harbor price</span>
+                      <span className="valueNew">{item.salvagePrice}</span>
+                    </div>
+
+                    <div className="valueRow">
+                      <span className="valueLabel">Potential saving</span>
+                      <span className="valueSaving">{item.saving}</span>
+                    </div>
+
+                    <p className="valueNote">
+                      Demo estimate based on comparable commercial-grade items,
+                      condition and volume.
+                    </p>
+                  </div>
 
                   <div className="metaGrid">
                     <div className="metaBox">
