@@ -1,5 +1,3 @@
-import type { CSSProperties } from "react";
-
 const listings = [
   {
     title: "Cruise Casino Roulette Equipment",
@@ -198,652 +196,1050 @@ const buyerTypes = [
   "Collectors",
 ];
 
-const styles: Record<string, CSSProperties> = {
-  page: {
-    minHeight: "100vh",
-    background:
-      "linear-gradient(180deg, #07111f 0%, #102338 30%, #d9c7a8 58%, #f4efe7 76%, #f4efe7 100%)",
-    color: "#101827",
-    fontFamily:
-      'Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif',
-    overflowX: "hidden",
-  },
-
-  hero: {
-    minHeight: "100vh",
-    padding: 28,
-    color: "white",
-    background:
-      "radial-gradient(circle at 82% 16%, rgba(244,203,117,0.35), transparent 32%), radial-gradient(circle at 12% 72%, rgba(58,88,115,0.45), transparent 34%), linear-gradient(145deg, #06101d 0%, #102338 48%, #27425d 100%)",
-  },
-
-  nav: {
-    maxWidth: 1220,
-    margin: "0 auto",
-    padding: "16px 20px",
-    borderRadius: 999,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    gap: 24,
-    border: "1px solid rgba(255,255,255,0.16)",
-    background:
-      "linear-gradient(135deg, rgba(255,255,255,0.13), rgba(255,255,255,0.06))",
-    backdropFilter: "blur(18px)",
-    boxShadow: "0 24px 80px rgba(0,0,0,0.24)",
-  },
-
-  logoWrap: {
-    display: "flex",
-    alignItems: "center",
-    gap: 12,
-  },
-
-  logoMark: {
-    width: 42,
-    height: 42,
-    borderRadius: "50%",
-    display: "grid",
-    placeItems: "center",
-    background: "linear-gradient(135deg, #f5d37d, #c8953d)",
-    color: "#07111f",
-    fontWeight: 950,
-    fontSize: 18,
-    boxShadow: "0 12px 34px rgba(216,168,79,0.34)",
-  },
-
-  logoText: {
-    fontSize: 23,
-    fontWeight: 950,
-    letterSpacing: "-0.06em",
-  },
-
-  navLinks: {
-    display: "flex",
-    gap: 28,
-    color: "rgba(255,255,255,0.74)",
-    fontSize: 14,
-    fontWeight: 650,
-  },
-
-  navLink: {
-    color: "inherit",
-    textDecoration: "none",
-  },
-
-  navButton: {
-    border: 0,
-    borderRadius: 999,
-    padding: "13px 20px",
-    background: "linear-gradient(135deg, #ffffff, #eadbbf)",
-    color: "#07111f",
-    fontWeight: 900,
-    cursor: "pointer",
-    textDecoration: "none",
-  },
-
-  heroGrid: {
-    maxWidth: 1220,
-    margin: "88px auto 0",
-    display: "grid",
-    gridTemplateColumns: "1fr 0.95fr",
-    gap: 60,
-    alignItems: "center",
-  },
-
-  eyebrow: {
-    display: "inline-flex",
-    alignItems: "center",
-    gap: 9,
-    padding: "9px 14px",
-    borderRadius: 999,
-    background: "rgba(216,168,79,0.16)",
-    color: "#f4cb75",
-    fontSize: 12,
-    fontWeight: 950,
-    letterSpacing: "0.08em",
-    textTransform: "uppercase",
-    marginBottom: 24,
-  },
-
-  dot: {
-    width: 8,
-    height: 8,
-    borderRadius: "50%",
-    background: "#f4cb75",
-    boxShadow: "0 0 18px #f4cb75",
-  },
-
-  h1: {
-    maxWidth: 850,
-    margin: 0,
-    fontSize: 78,
-    lineHeight: 0.92,
-    letterSpacing: "-0.075em",
-    fontWeight: 950,
-  },
-
-  heroText: {
-    maxWidth: 720,
-    margin: "28px 0 0",
-    color: "rgba(255,255,255,0.76)",
-    fontSize: 19,
-    lineHeight: 1.75,
-  },
-
-  actions: {
-    display: "flex",
-    flexWrap: "wrap",
-    gap: 14,
-    marginTop: 36,
-  },
-
-  primaryButton: {
-    border: 0,
-    borderRadius: 999,
-    padding: "16px 25px",
-    background:
-      "linear-gradient(135deg, #f7d783 0%, #d8a84f 55%, #b77a2d 100%)",
-    color: "#08111f",
-    fontWeight: 950,
-    cursor: "pointer",
-    boxShadow: "0 18px 50px rgba(216,168,79,0.28)",
-    textDecoration: "none",
-    display: "inline-flex",
-  },
-
-  secondaryButton: {
-    borderRadius: 999,
-    padding: "16px 25px",
-    background:
-      "linear-gradient(135deg, rgba(255,255,255,0.13), rgba(255,255,255,0.06))",
-    color: "white",
-    border: "1px solid rgba(255,255,255,0.17)",
-    fontWeight: 950,
-    cursor: "pointer",
-    textDecoration: "none",
-    display: "inline-flex",
-  },
-
-  stats: {
-    display: "grid",
-    gridTemplateColumns: "repeat(3, 1fr)",
-    gap: 16,
-    marginTop: 48,
-    maxWidth: 720,
-  },
-
-  statCard: {
-    padding: 19,
-    borderRadius: 24,
-    background:
-      "linear-gradient(145deg, rgba(255,255,255,0.12), rgba(255,255,255,0.05))",
-    border: "1px solid rgba(255,255,255,0.12)",
-  },
-
-  statValue: {
-    display: "block",
-    fontSize: 31,
-    fontWeight: 950,
-    letterSpacing: "-0.055em",
-  },
-
-  statLabel: {
-    display: "block",
-    marginTop: 5,
-    color: "rgba(255,255,255,0.64)",
-    fontSize: 13,
-    lineHeight: 1.35,
-  },
-
-  heroPanel: {
-    padding: 18,
-    borderRadius: 38,
-    background:
-      "linear-gradient(145deg, rgba(255,255,255,0.13), rgba(255,255,255,0.06))",
-    border: "1px solid rgba(255,255,255,0.15)",
-    backdropFilter: "blur(20px)",
-    boxShadow: "0 45px 120px rgba(0,0,0,0.34)",
-  },
-
-  heroImageWrap: {
-    position: "relative",
-    overflow: "hidden",
-    borderRadius: 30,
-    height: 420,
-    background: "#0b1828",
-  },
-
-  heroImage: {
-    width: "100%",
-    height: "100%",
-    objectFit: "cover",
-    display: "block",
-    filter: "saturate(0.92) contrast(1.05)",
-  },
-
-  overlay: {
-    position: "absolute",
-    inset: 0,
-    background:
-      "linear-gradient(180deg, rgba(7,17,31,0.08), rgba(7,17,31,0.82))",
-  },
-
-  floatingBadge: {
-    position: "absolute",
-    left: 18,
-    top: 18,
-    padding: "9px 13px",
-    borderRadius: 999,
-    background: "linear-gradient(135deg, #ffffff, #eadbbf)",
-    color: "#07111f",
-    fontSize: 12,
-    fontWeight: 950,
-  },
-
-  floatingInfo: {
-    position: "absolute",
-    left: 18,
-    right: 18,
-    bottom: 18,
-    padding: 18,
-    borderRadius: 24,
-    background:
-      "linear-gradient(145deg, rgba(255,255,255,0.95), rgba(235,222,202,0.92))",
-    color: "#07111f",
-    boxShadow: "0 18px 55px rgba(0,0,0,0.24)",
-  },
-
-  sourceLink: {
-    color: "#9a6b19",
-    fontSize: 12,
-    fontWeight: 950,
-    textDecoration: "none",
-  },
-
-  section: {
-    maxWidth: 1220,
-    margin: "0 auto",
-    padding: "96px 28px 35px",
-    background: "transparent",
-  },
-
-  sectionHead: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "flex-end",
-    gap: 40,
-    marginBottom: 36,
-  },
-
-  kicker: {
-    display: "inline-flex",
-    marginBottom: 16,
-    padding: "8px 13px",
-    borderRadius: 999,
-    background: "linear-gradient(135deg, #eadbbf, #d6bd8f)",
-    color: "#765418",
-    fontSize: 12,
-    fontWeight: 950,
-    textTransform: "uppercase",
-    letterSpacing: "0.08em",
-  },
-
-  sectionTitle: {
-    maxWidth: 820,
-    margin: 0,
-    fontSize: 57,
-    lineHeight: 1,
-    letterSpacing: "-0.06em",
-    fontWeight: 950,
-  },
-
-  sectionIntro: {
-    maxWidth: 460,
-    margin: 0,
-    color: "#5f6470",
-    lineHeight: 1.7,
-  },
-
-  categoryGrid: {
-    display: "grid",
-    gridTemplateColumns: "repeat(3, 1fr)",
-    gap: 18,
-  },
-
-  categoryCard: {
-    minHeight: 190,
-    padding: 25,
-    borderRadius: 30,
-    background:
-      "linear-gradient(145deg, rgba(255,255,255,0.9), rgba(239,228,209,0.8))",
-    border: "1px solid rgba(228,215,195,0.95)",
-    boxShadow: "0 24px 70px rgba(17,24,39,0.07)",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-between",
-  },
-
-  categoryTitle: {
-    margin: "12px 0 0",
-    fontSize: 25,
-    fontWeight: 950,
-    letterSpacing: "-0.05em",
-  },
-
-  categoryText: {
-    margin: "12px 0 0",
-    color: "#5f6470",
-    lineHeight: 1.6,
-    fontSize: 14,
-  },
-
-  buyerStrip: {
-    maxWidth: 1220,
-    margin: "40px auto 0",
-    padding: "0 28px",
-  },
-
-  buyerInner: {
-    borderRadius: 34,
-    padding: 28,
-    background:
-      "linear-gradient(145deg, rgba(16,24,39,0.96), rgba(36,61,88,0.96))",
-    color: "white",
-    boxShadow: "0 28px 80px rgba(17,24,39,0.16)",
-  },
-
-  buyerGrid: {
-    display: "grid",
-    gridTemplateColumns: "repeat(4, 1fr)",
-    gap: 12,
-    marginTop: 20,
-  },
-
-  buyerPill: {
-    padding: "13px 16px",
-    borderRadius: 999,
-    background: "rgba(255,255,255,0.09)",
-    border: "1px solid rgba(255,255,255,0.12)",
-    fontWeight: 850,
-    fontSize: 14,
-    textAlign: "center",
-  },
-
-  marketplaceGrid: {
-    display: "grid",
-    gridTemplateColumns: "repeat(4, 1fr)",
-    gap: 20,
-  },
-
-  card: {
-    overflow: "hidden",
-    borderRadius: 32,
-    background:
-      "linear-gradient(145deg, rgba(255,255,255,0.94), rgba(239,228,209,0.86))",
-    border: "1px solid rgba(228,215,195,0.95)",
-    boxShadow: "0 28px 80px rgba(17,24,39,0.09)",
-  },
-
-  cardImageWrap: {
-    position: "relative",
-    height: 235,
-    overflow: "hidden",
-    background: "#0b1828",
-  },
-
-  cardImage: {
-    width: "100%",
-    height: "100%",
-    objectFit: "cover",
-    display: "block",
-  },
-
-  cardBadge: {
-    position: "absolute",
-    left: 15,
-    top: 15,
-    padding: "8px 12px",
-    borderRadius: 999,
-    background: "linear-gradient(135deg, #ffffff, #eadbbf)",
-    color: "#101827",
-    fontSize: 12,
-    fontWeight: 950,
-  },
-
-  cardBody: {
-    padding: 22,
-  },
-
-  cardCategory: {
-    color: "#85611d",
-    fontSize: 13,
-    fontWeight: 950,
-  },
-
-  cardTitle: {
-    minHeight: 58,
-    margin: "8px 0 14px",
-    fontSize: 22,
-    lineHeight: 1.1,
-    letterSpacing: "-0.05em",
-    fontWeight: 950,
-  },
-
-  quantityBox: {
-    display: "inline-flex",
-    marginBottom: 14,
-    padding: "7px 10px",
-    borderRadius: 999,
-    background: "#101827",
-    color: "white",
-    fontSize: 12,
-    fontWeight: 950,
-  },
-
-  buyerUse: {
-    margin: "0 0 16px",
-    color: "#5f6470",
-    lineHeight: 1.55,
-    fontSize: 13,
-  },
-
-  metaGrid: {
-    display: "grid",
-    gridTemplateColumns: "1fr 1fr",
-    gap: 10,
-    marginTop: 14,
-  },
-
-  metaBox: {
-    padding: 11,
-    borderRadius: 17,
-    background:
-      "linear-gradient(145deg, rgba(244,239,231,0.98), rgba(232,221,203,0.92))",
-    border: "1px solid rgba(234,223,206,0.95)",
-  },
-
-  metaLabel: {
-    display: "block",
-    color: "#6b7280",
-    fontSize: 10,
-    fontWeight: 850,
-    textTransform: "uppercase",
-    letterSpacing: "0.05em",
-  },
-
-  metaValue: {
-    display: "block",
-    marginTop: 4,
-    color: "#101827",
-    fontSize: 12,
-    fontWeight: 900,
-    lineHeight: 1.35,
-  },
-
-  paymentNotice: {
-    marginTop: 14,
-    padding: 13,
-    borderRadius: 20,
-    background:
-      "linear-gradient(145deg, rgba(16,24,39,0.95), rgba(36,61,88,0.94))",
-    color: "white",
-    fontSize: 12,
-    lineHeight: 1.5,
-  },
-
-  paymentLabel: {
-    display: "block",
-    marginBottom: 4,
-    color: "#f4cb75",
-    fontWeight: 950,
-    fontSize: 11,
-    textTransform: "uppercase",
-    letterSpacing: "0.06em",
-  },
-
-  cardActions: {
-    display: "flex",
-    justifyContent: "space-between",
-    gap: 12,
-    alignItems: "center",
-    marginTop: 18,
-  },
-
-  viewButton: {
-    borderRadius: 999,
-    padding: "11px 15px",
-    background: "linear-gradient(135deg, #101827, #243d58)",
-    color: "white",
-    fontSize: 13,
-    fontWeight: 950,
-    textDecoration: "none",
-  },
-
-  sellerSection: {
-    maxWidth: 1220,
-    margin: "0 auto",
-    padding: "78px 28px",
-    display: "grid",
-    gridTemplateColumns: "0.9fr 1.1fr",
-    gap: 58,
-    alignItems: "center",
-  },
-
-  trustGrid: {
-    display: "grid",
-    gap: 16,
-  },
-
-  trustCard: {
-    padding: 24,
-    borderRadius: 26,
-    background:
-      "linear-gradient(145deg, #101827 0%, #172a3f 58%, #243d58 100%)",
-    color: "white",
-    boxShadow: "0 24px 70px rgba(17,24,39,0.13)",
-  },
-
-  trustTitle: {
-    margin: 0,
-    fontSize: 22,
-    fontWeight: 950,
-    letterSpacing: "-0.045em",
-  },
-
-  trustText: {
-    margin: "10px 0 0",
-    color: "rgba(255,255,255,0.68)",
-    lineHeight: 1.65,
-  },
-
-  cta: {
-    maxWidth: 1220,
-    margin: "42px auto 70px",
-    padding: "80px 32px",
-    textAlign: "center",
-    color: "white",
-    borderRadius: 42,
-    background:
-      "radial-gradient(circle at 18% 18%, rgba(244,203,117,0.32), transparent 30%), radial-gradient(circle at 86% 82%, rgba(64,96,124,0.55), transparent 34%), linear-gradient(135deg, #07111f 0%, #13283d 55%, #27425d 100%)",
-    boxShadow: "0 34px 100px rgba(17,24,39,0.18)",
-  },
-
-  ctaTitle: {
-    maxWidth: 850,
-    margin: "0 auto",
-    fontSize: 62,
-    lineHeight: 0.98,
-    letterSpacing: "-0.065em",
-    fontWeight: 950,
-  },
-
-  ctaText: {
-    maxWidth: 650,
-    margin: "24px auto 34px",
-    color: "rgba(255,255,255,0.72)",
-    lineHeight: 1.7,
-    fontSize: 18,
-  },
-
-  footer: {
-    maxWidth: 1220,
-    margin: "0 auto",
-    padding: "0 28px 36px",
-    display: "flex",
-    justifyContent: "space-between",
-    gap: 20,
-    color: "#5f6470",
-    fontSize: 14,
-  },
-};
+const css = `
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: linear-gradient(180deg, #07111f 0%, #102338 30%, #d9c7a8 58%, #f4efe7 76%, #f4efe7 100%);
+  color: #101827;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+}
+
+.hero {
+  min-height: 100vh;
+  padding: 28px;
+  color: white;
+  background:
+    radial-gradient(circle at 82% 16%, rgba(244,203,117,0.35), transparent 32%),
+    radial-gradient(circle at 12% 72%, rgba(58,88,115,0.45), transparent 34%),
+    linear-gradient(145deg, #06101d 0%, #102338 48%, #27425d 100%);
+}
+
+.nav {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: linear-gradient(135deg, rgba(255,255,255,0.13), rgba(255,255,255,0.06));
+  backdrop-filter: blur(18px);
+  box-shadow: 0 24px 80px rgba(0,0,0,0.24);
+}
+
+.logoWrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logoMark {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #f5d37d, #c8953d);
+  color: #07111f;
+  font-weight: 950;
+  font-size: 18px;
+  box-shadow: 0 12px 34px rgba(216,168,79,0.34);
+  flex: 0 0 auto;
+}
+
+.logoText {
+  font-size: 23px;
+  font-weight: 950;
+  letter-spacing: -0.06em;
+  white-space: nowrap;
+}
+
+.navLinks {
+  display: flex;
+  gap: 28px;
+  color: rgba(255,255,255,0.74);
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.navLink {
+  color: inherit;
+  text-decoration: none;
+}
+
+.navButton {
+  border: 0;
+  border-radius: 999px;
+  padding: 13px 20px;
+  background: linear-gradient(135deg, #ffffff, #eadbbf);
+  color: #07111f;
+  font-weight: 900;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.heroGrid {
+  max-width: 1220px;
+  margin: 88px auto 0;
+  display: grid;
+  grid-template-columns: 1fr 0.95fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 14px;
+  border-radius: 999px;
+  background: rgba(216,168,79,0.16);
+  color: #f4cb75;
+  font-size: 12px;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #f4cb75;
+  box-shadow: 0 0 18px #f4cb75;
+  flex: 0 0 auto;
+}
+
+.h1 {
+  max-width: 850px;
+  margin: 0;
+  font-size: 78px;
+  line-height: 0.92;
+  letter-spacing: -0.075em;
+  font-weight: 950;
+}
+
+.heroText {
+  max-width: 720px;
+  margin: 28px 0 0;
+  color: rgba(255,255,255,0.76);
+  font-size: 19px;
+  line-height: 1.75;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 36px;
+}
+
+.primaryButton {
+  border: 0;
+  border-radius: 999px;
+  padding: 16px 25px;
+  background: linear-gradient(135deg, #f7d783 0%, #d8a84f 55%, #b77a2d 100%);
+  color: #08111f;
+  font-weight: 950;
+  cursor: pointer;
+  box-shadow: 0 18px 50px rgba(216,168,79,0.28);
+  text-decoration: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.secondaryButton {
+  border-radius: 999px;
+  padding: 16px 25px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.13), rgba(255,255,255,0.06));
+  color: white;
+  border: 1px solid rgba(255,255,255,0.17);
+  font-weight: 950;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 48px;
+  max-width: 720px;
+}
+
+.statCard {
+  padding: 19px;
+  border-radius: 24px;
+  background: linear-gradient(145deg, rgba(255,255,255,0.12), rgba(255,255,255,0.05));
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.statValue {
+  display: block;
+  font-size: 31px;
+  font-weight: 950;
+  letter-spacing: -0.055em;
+}
+
+.statLabel {
+  display: block;
+  margin-top: 5px;
+  color: rgba(255,255,255,0.64);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.heroPanel {
+  padding: 18px;
+  border-radius: 38px;
+  background: linear-gradient(145deg, rgba(255,255,255,0.13), rgba(255,255,255,0.06));
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 45px 120px rgba(0,0,0,0.34);
+}
+
+.heroImageWrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: 30px;
+  height: 420px;
+  background: #0b1828;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.92) contrast(1.05);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(7,17,31,0.08), rgba(7,17,31,0.82));
+}
+
+.floatingBadge {
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  padding: 9px 13px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ffffff, #eadbbf);
+  color: #07111f;
+  font-size: 12px;
+  font-weight: 950;
+}
+
+.floatingInfo {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  padding: 18px;
+  border-radius: 24px;
+  background: linear-gradient(145deg, rgba(255,255,255,0.95), rgba(235,222,202,0.92));
+  color: #07111f;
+  box-shadow: 0 18px 55px rgba(0,0,0,0.24);
+}
+
+.floatingInfo h2 {
+  margin: 8px 0 10px;
+  font-size: 28px;
+  line-height: 1.05;
+  letter-spacing: -0.055em;
+  font-weight: 950;
+}
+
+.floatingInfo p {
+  margin: 0 0 12px;
+  color: #4b5563;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.sourceLink {
+  color: #9a6b19;
+  font-size: 12px;
+  font-weight: 950;
+  text-decoration: none;
+}
+
+.section {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 96px 28px 35px;
+  background: transparent;
+}
+
+.sectionHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+  margin-bottom: 36px;
+}
+
+.kicker {
+  display: inline-flex;
+  margin-bottom: 16px;
+  padding: 8px 13px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #eadbbf, #d6bd8f);
+  color: #765418;
+  font-size: 12px;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.sectionTitle {
+  max-width: 820px;
+  margin: 0;
+  font-size: 57px;
+  line-height: 1;
+  letter-spacing: -0.06em;
+  font-weight: 950;
+}
+
+.sectionIntro {
+  max-width: 460px;
+  margin: 0;
+  color: #5f6470;
+  line-height: 1.7;
+}
+
+.categoryGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.categoryCard {
+  min-height: 190px;
+  padding: 25px;
+  border-radius: 30px;
+  background: linear-gradient(145deg, rgba(255,255,255,0.9), rgba(239,228,209,0.8));
+  border: 1px solid rgba(228,215,195,0.95);
+  box-shadow: 0 24px 70px rgba(17,24,39,0.07);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.categoryNumber {
+  color: #c8953d;
+  font-size: 13px;
+  font-weight: 950;
+}
+
+.categoryTitle {
+  margin: 12px 0 0;
+  font-size: 25px;
+  font-weight: 950;
+  letter-spacing: -0.05em;
+}
+
+.categoryText {
+  margin: 12px 0 0;
+  color: #5f6470;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.viewCollection {
+  margin-top: 24px;
+  color: #9a6b19;
+  font-size: 14px;
+  font-weight: 950;
+}
+
+.buyerStrip {
+  max-width: 1220px;
+  margin: 40px auto 0;
+  padding: 0 28px;
+}
+
+.buyerInner {
+  border-radius: 34px;
+  padding: 28px;
+  background: linear-gradient(145deg, rgba(16,24,39,0.96), rgba(36,61,88,0.96));
+  color: white;
+  box-shadow: 0 28px 80px rgba(17,24,39,0.16);
+}
+
+.buyerTitle {
+  max-width: 820px;
+  margin: 0;
+  font-size: 46px;
+  line-height: 1;
+  letter-spacing: -0.055em;
+  font-weight: 950;
+}
+
+.buyerText {
+  max-width: 760px;
+  margin: 18px 0 0;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.7;
+  font-size: 17px;
+}
+
+.buyerGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.buyerPill {
+  padding: 13px 16px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.09);
+  border: 1px solid rgba(255,255,255,0.12);
+  font-weight: 850;
+  font-size: 14px;
+  text-align: center;
+}
+
+.marketplaceGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.card {
+  overflow: hidden;
+  border-radius: 32px;
+  background: linear-gradient(145deg, rgba(255,255,255,0.94), rgba(239,228,209,0.86));
+  border: 1px solid rgba(228,215,195,0.95);
+  box-shadow: 0 28px 80px rgba(17,24,39,0.09);
+}
+
+.cardImageWrap {
+  position: relative;
+  height: 235px;
+  overflow: hidden;
+  background: #0b1828;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cardBadge {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ffffff, #eadbbf);
+  color: #101827;
+  font-size: 12px;
+  font-weight: 950;
+}
+
+.cardBody {
+  padding: 22px;
+}
+
+.cardCategory {
+  color: #85611d;
+  font-size: 13px;
+  font-weight: 950;
+}
+
+.cardTitle {
+  min-height: 58px;
+  margin: 8px 0 14px;
+  font-size: 22px;
+  line-height: 1.1;
+  letter-spacing: -0.05em;
+  font-weight: 950;
+}
+
+.quantityBox {
+  display: inline-flex;
+  margin-bottom: 14px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: #101827;
+  color: white;
+  font-size: 12px;
+  font-weight: 950;
+}
+
+.buyerUse {
+  margin: 0 0 16px;
+  color: #5f6470;
+  line-height: 1.55;
+  font-size: 13px;
+}
+
+.metaGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.metaBox {
+  padding: 11px;
+  border-radius: 17px;
+  background: linear-gradient(145deg, rgba(244,239,231,0.98), rgba(232,221,203,0.92));
+  border: 1px solid rgba(234,223,206,0.95);
+}
+
+.metaLabel {
+  display: block;
+  color: #6b7280;
+  font-size: 10px;
+  font-weight: 850;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.metaValue {
+  display: block;
+  margin-top: 4px;
+  color: #101827;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1.35;
+}
+
+.paymentNotice {
+  margin-top: 14px;
+  padding: 13px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, rgba(16,24,39,0.95), rgba(36,61,88,0.94));
+  color: white;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.paymentLabel {
+  display: block;
+  margin-bottom: 4px;
+  color: #f4cb75;
+  font-weight: 950;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.cardActions {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  margin-top: 18px;
+}
+
+.viewButton {
+  border-radius: 999px;
+  padding: 11px 15px;
+  background: linear-gradient(135deg, #101827, #243d58);
+  color: white;
+  font-size: 13px;
+  font-weight: 950;
+  text-decoration: none;
+}
+
+.photoCredit {
+  margin: 14px 0 0;
+  color: #6b7280;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.sellerSection {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 78px 28px;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 58px;
+  align-items: center;
+}
+
+.businessText {
+  margin-top: 24px;
+  color: #5f6470;
+  line-height: 1.7;
+  font-size: 17px;
+}
+
+.trustGrid {
+  display: grid;
+  gap: 16px;
+}
+
+.trustCard {
+  padding: 24px;
+  border-radius: 26px;
+  background: linear-gradient(145deg, #101827 0%, #172a3f 58%, #243d58 100%);
+  color: white;
+  box-shadow: 0 24px 70px rgba(17,24,39,0.13);
+}
+
+.trustTitle {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 950;
+  letter-spacing: -0.045em;
+}
+
+.trustText {
+  margin: 10px 0 0;
+  color: rgba(255,255,255,0.68);
+  line-height: 1.65;
+}
+
+.sellerSmallCard strong {
+  font-size: 24px;
+  letter-spacing: -0.04em;
+}
+
+.sellerSmallCard p {
+  color: #5f6470;
+  line-height: 1.6;
+}
+
+.cta {
+  max-width: 1220px;
+  margin: 42px auto 70px;
+  padding: 80px 32px;
+  text-align: center;
+  color: white;
+  border-radius: 42px;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(244,203,117,0.32), transparent 30%),
+    radial-gradient(circle at 86% 82%, rgba(64,96,124,0.55), transparent 34%),
+    linear-gradient(135deg, #07111f 0%, #13283d 55%, #27425d 100%);
+  box-shadow: 0 34px 100px rgba(17,24,39,0.18);
+}
+
+.ctaTitle {
+  max-width: 850px;
+  margin: 0 auto;
+  font-size: 62px;
+  line-height: 0.98;
+  letter-spacing: -0.065em;
+  font-weight: 950;
+}
+
+.ctaText {
+  max-width: 650px;
+  margin: 24px auto 34px;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.7;
+  font-size: 18px;
+}
+
+.footer {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 28px 36px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: #5f6470;
+  font-size: 14px;
+}
+
+/* TABLET */
+@media (max-width: 1100px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .h1 {
+    font-size: 64px;
+  }
+
+  .marketplaceGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .categoryGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sellerSection {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+  .hero {
+    min-height: auto;
+    padding: 14px 14px 54px;
+  }
+
+  .nav {
+    border-radius: 26px;
+    padding: 12px;
+  }
+
+  .logoMark {
+    width: 36px;
+    height: 36px;
+    font-size: 15px;
+  }
+
+  .logoText {
+    font-size: 18px;
+  }
+
+  .navLinks {
+    display: none;
+  }
+
+  .navButton {
+    padding: 11px 14px;
+    font-size: 12px;
+  }
+
+  .heroGrid {
+    margin-top: 48px;
+    gap: 32px;
+  }
+
+  .eyebrow {
+    font-size: 10px;
+    line-height: 1.35;
+    letter-spacing: 0.06em;
+    margin-bottom: 18px;
+  }
+
+  .h1 {
+    font-size: clamp(42px, 12vw, 56px);
+    line-height: 0.95;
+    letter-spacing: -0.065em;
+  }
+
+  .heroText {
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .actions {
+    margin-top: 28px;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+    text-align: center;
+    padding: 15px 18px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 30px;
+  }
+
+  .statCard {
+    padding: 16px;
+    border-radius: 20px;
+  }
+
+  .statValue {
+    font-size: 26px;
+  }
+
+  .heroPanel {
+    padding: 10px;
+    border-radius: 28px;
+  }
+
+  .heroImageWrap {
+    height: 360px;
+    border-radius: 22px;
+  }
+
+  .floatingBadge {
+    left: 12px;
+    top: 12px;
+    font-size: 11px;
+  }
+
+  .floatingInfo {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    padding: 15px;
+    border-radius: 20px;
+  }
+
+  .floatingInfo h2 {
+    font-size: 22px;
+  }
+
+  .floatingInfo p {
+    font-size: 13px;
+  }
+
+  .section {
+    padding: 62px 16px 24px;
+  }
+
+  .sectionHead {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 24px;
+  }
+
+  .kicker {
+    font-size: 10px;
+    margin-bottom: 12px;
+  }
+
+  .sectionTitle {
+    font-size: clamp(34px, 10vw, 44px);
+    line-height: 1.02;
+    letter-spacing: -0.055em;
+  }
+
+  .sectionIntro {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .categoryGrid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .categoryCard {
+    min-height: auto;
+    padding: 20px;
+    border-radius: 24px;
+  }
+
+  .categoryTitle {
+    font-size: 22px;
+  }
+
+  .buyerStrip {
+    padding: 0 16px;
+    margin-top: 28px;
+  }
+
+  .buyerInner {
+    border-radius: 26px;
+    padding: 22px;
+  }
+
+  .buyerTitle {
+    font-size: 34px;
+    line-height: 1.02;
+    letter-spacing: -0.055em;
+  }
+
+  .buyerText {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .buyerGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .buyerPill {
+    padding: 11px 10px;
+    font-size: 12px;
+  }
+
+  .marketplaceGrid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .card {
+    border-radius: 26px;
+  }
+
+  .cardImageWrap {
+    height: 245px;
+  }
+
+  .cardBody {
+    padding: 18px;
+  }
+
+  .cardTitle {
+    min-height: auto;
+    font-size: 22px;
+  }
+
+  .metaGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .cardActions {
+    align-items: stretch;
+  }
+
+  .viewButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sellerSection {
+    padding: 60px 16px;
+    gap: 28px;
+  }
+
+  .businessText {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .trustCard {
+    padding: 20px;
+    border-radius: 22px;
+  }
+
+  .trustTitle {
+    font-size: 20px;
+  }
+
+  .trustText {
+    font-size: 14px;
+  }
+
+  .cta {
+    margin: 30px 16px 46px;
+    padding: 50px 18px;
+    border-radius: 28px;
+  }
+
+  .ctaTitle {
+    font-size: clamp(34px, 11vw, 46px);
+    line-height: 1;
+  }
+
+  .ctaText {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .footer {
+    padding: 0 16px 30px;
+    flex-direction: column;
+    font-size: 12px;
+  }
+}
+
+/* VERY SMALL PHONES */
+@media (max-width: 380px) {
+  .logoText {
+    font-size: 16px;
+  }
+
+  .navButton {
+    display: none;
+  }
+
+  .h1 {
+    font-size: 40px;
+  }
+
+  .buyerGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .heroImageWrap {
+    height: 320px;
+  }
+}
+`;
 
 export default function Home() {
   const featured = listings[0];
 
   return (
-    <main style={styles.page}>
-      <section style={styles.hero}>
-        <nav style={styles.nav}>
-          <div style={styles.logoWrap}>
-            <div style={styles.logoMark}>S</div>
-            <div style={styles.logoText}>
+    <main className="page">
+      <style dangerouslySetInnerHTML={{ __html: css }} />
+
+      <section className="hero">
+        <nav className="nav">
+          <div className="logoWrap">
+            <div className="logoMark">S</div>
+            <div className="logoText">
               <span style={{ color: "#d8a84f" }}>Salvage</span> Harbor
             </div>
           </div>
 
-          <div style={styles.navLinks}>
-            <a href="#marketplace" style={styles.navLink}>
+          <div className="navLinks">
+            <a href="#marketplace" className="navLink">
               Marketplace
             </a>
-            <a href="#categories" style={styles.navLink}>
+            <a href="#categories" className="navLink">
               Categories
             </a>
-            <a href="#bulk" style={styles.navLink}>
+            <a href="#bulk" className="navLink">
               Bulk lots
             </a>
-            <a href="#business" style={styles.navLink}>
+            <a href="#business" className="navLink">
               Business model
             </a>
           </div>
 
-          <a href="#seller-application" style={styles.navButton}>
+          <a href="#seller-application" className="navButton">
             Request access
           </a>
         </nav>
 
-        <div style={styles.heroGrid}>
+        <div className="heroGrid">
           <div>
-            <div style={styles.eyebrow}>
-              <span style={styles.dot} />
+            <div className="eyebrow">
+              <span className="dot" />
               Verified European cruise & ship salvage marketplace
             </div>
 
-            <h1 style={styles.h1}>
+            <h1 className="h1">
               Cruise ship interiors, casino equipment and bulk hospitality lots.
             </h1>
 
-            <p style={styles.heroText}>
+            <p className="heroText">
               Salvage Harbor connects verified cruise liquidators, shipyards and
               brokers with hotels, restaurants, glamping parks, event companies
               and collectors. From cruise casino equipment and theater seats to
@@ -851,69 +1247,51 @@ export default function Home() {
               maritime décor.
             </p>
 
-            <div style={styles.actions}>
-              <a href="#marketplace" style={styles.primaryButton}>
+            <div className="actions">
+              <a href="#marketplace" className="primaryButton">
                 Explore marketplace
               </a>
-              <a href="#seller-application" style={styles.secondaryButton}>
+              <a href="#seller-application" className="secondaryButton">
                 Apply as verified seller
               </a>
             </div>
 
-            <div style={styles.stats}>
-              <div style={styles.statCard}>
-                <strong style={styles.statValue}>Ship</strong>
-                <span style={styles.statLabel}>
+            <div className="stats">
+              <div className="statCard">
+                <strong className="statValue">Ship</strong>
+                <span className="statLabel">
                   Only ship, cruise, yacht or maritime related inventory
                 </span>
               </div>
-              <div style={styles.statCard}>
-                <strong style={styles.statValue}>10%</strong>
-                <span style={styles.statLabel}>Success commission</span>
+              <div className="statCard">
+                <strong className="statValue">10%</strong>
+                <span className="statLabel">Success commission</span>
               </div>
-              <div style={styles.statCard}>
-                <strong style={styles.statValue}>Safe</strong>
-                <span style={styles.statLabel}>
+              <div className="statCard">
+                <strong className="statValue">Safe</strong>
+                <span className="statLabel">
                   Payment released after buyer approval
                 </span>
               </div>
             </div>
           </div>
 
-          <div style={styles.heroPanel}>
-            <div style={styles.heroImageWrap}>
+          <div className="heroPanel">
+            <div className="heroImageWrap">
               <img
                 src={featured.image}
                 alt={featured.title}
-                style={styles.heroImage}
+                className="heroImage"
               />
-              <div style={styles.overlay} />
+              <div className="overlay" />
+              <div className="floatingBadge">{featured.badge}</div>
 
-              <div style={styles.floatingBadge}>{featured.badge}</div>
-
-              <div style={styles.floatingInfo}>
+              <div className="floatingInfo">
                 <small style={{ color: "#85611d", fontWeight: 950 }}>
                   Featured casino lot · {featured.origin}
                 </small>
-                <h2
-                  style={{
-                    margin: "8px 0 10px",
-                    fontSize: 28,
-                    lineHeight: 1.05,
-                    letterSpacing: "-0.055em",
-                    fontWeight: 950,
-                  }}
-                >
-                  {featured.title}
-                </h2>
-                <p
-                  style={{
-                    margin: "0 0 12px",
-                    color: "#4b5563",
-                    lineHeight: 1.5,
-                    fontSize: 14,
-                  }}
-                >
+                <h2>{featured.title}</h2>
+                <p>
                   {featured.quantity} · {featured.seller} · payment released
                   after buyer approval.
                 </p>
@@ -921,7 +1299,7 @@ export default function Home() {
                   href={featured.sourceUrl}
                   target="_blank"
                   rel="noreferrer"
-                  style={styles.sourceLink}
+                  className="sourceLink"
                 >
                   {featured.sourceName} →
                 </a>
@@ -931,91 +1309,55 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="categories" style={styles.section}>
-        <div style={styles.sectionHead}>
+      <section id="categories" className="section">
+        <div className="sectionHead">
           <div>
-            <span style={styles.kicker}>High-value categories</span>
-            <h2 style={styles.sectionTitle}>
+            <span className="kicker">High-value categories</span>
+            <h2 className="sectionTitle">
               Not random furniture. Real cruise, ship and yacht interiors.
             </h2>
           </div>
 
-          <p style={styles.sectionIntro}>
+          <p className="sectionIntro">
             Cruise ships are floating hotels. That means large quantities of
             valuable furniture, horeca equipment, casino items, theater seating
             and decorative pieces can be resold as project-ready lots.
           </p>
         </div>
 
-        <div style={styles.categoryGrid}>
+        <div className="categoryGrid">
           {categories.map((category, index) => (
-            <article style={styles.categoryCard} key={category.title}>
+            <article className="categoryCard" key={category.title}>
               <div>
-                <span
-                  style={{
-                    color: "#c8953d",
-                    fontSize: 13,
-                    fontWeight: 950,
-                  }}
-                >
-                  0{index + 1}
-                </span>
-
-                <h3 style={styles.categoryTitle}>{category.title}</h3>
-                <p style={styles.categoryText}>{category.text}</p>
+                <span className="categoryNumber">0{index + 1}</span>
+                <h3 className="categoryTitle">{category.title}</h3>
+                <p className="categoryText">{category.text}</p>
               </div>
-
-              <span
-                style={{
-                  marginTop: 24,
-                  color: "#9a6b19",
-                  fontSize: 14,
-                  fontWeight: 950,
-                }}
-              >
-                View collection →
-              </span>
+              <span className="viewCollection">View collection →</span>
             </article>
           ))}
         </div>
       </section>
 
-      <section id="bulk" style={styles.buyerStrip}>
-        <div style={styles.buyerInner}>
-          <span style={styles.kicker}>Who buys this inventory?</span>
+      <section id="bulk" className="buyerStrip">
+        <div className="buyerInner">
+          <span className="kicker">Who buys this inventory?</span>
 
-          <h2
-            style={{
-              maxWidth: 820,
-              margin: 0,
-              fontSize: 46,
-              lineHeight: 1,
-              letterSpacing: "-0.055em",
-              fontWeight: 950,
-            }}
-          >
+          <h2 className="buyerTitle">
             One cruise ship can supply an entire hotel, event venue or glamping
             concept.
           </h2>
 
-          <p
-            style={{
-              maxWidth: 760,
-              margin: "18px 0 0",
-              color: "rgba(255,255,255,0.7)",
-              lineHeight: 1.7,
-              fontSize: 17,
-            }}
-          >
+          <p className="buyerText">
             Matching deck chairs, dining furniture, bar counters, theater seats,
             casino equipment and cabin furniture are easier to sell when
             positioned as complete commercial lots instead of random second-hand
             items.
           </p>
 
-          <div style={styles.buyerGrid}>
+          <div className="buyerGrid">
             {buyerTypes.map((buyer) => (
-              <div style={styles.buyerPill} key={buyer}>
+              <div className="buyerPill" key={buyer}>
                 {buyer}
               </div>
             ))}
@@ -1023,76 +1365,69 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="marketplace" style={{ ...styles.section, paddingTop: 82 }}>
-        <div style={styles.sectionHead}>
+      <section id="marketplace" className="section">
+        <div className="sectionHead">
           <div>
-            <span style={styles.kicker}>Marketplace preview</span>
-            <h2 style={styles.sectionTitle}>
+            <span className="kicker">Marketplace preview</span>
+            <h2 className="sectionTitle">
               Cruise deck seating, dining rooms, casino lots and ship interiors.
             </h2>
           </div>
 
-          <p style={styles.sectionIntro}>
+          <p className="sectionIntro">
             Each listing shows the origin, quantity, verified seller status,
             price, 10% commission model, secure payment protection and clickable
             photo source.
           </p>
         </div>
 
-        <div style={styles.marketplaceGrid}>
+        <div className="marketplaceGrid">
           {listings.map((item) => (
-            <article style={styles.card} key={item.title}>
-              <div style={styles.cardImageWrap}>
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  style={styles.cardImage}
-                />
-                <span style={styles.cardBadge}>{item.badge}</span>
+            <article className="card" key={item.title}>
+              <div className="cardImageWrap">
+                <img src={item.image} alt={item.title} className="cardImage" />
+                <span className="cardBadge">{item.badge}</span>
               </div>
 
-              <div style={styles.cardBody}>
-                <small style={styles.cardCategory}>{item.category}</small>
+              <div className="cardBody">
+                <small className="cardCategory">{item.category}</small>
+                <h3 className="cardTitle">{item.title}</h3>
+                <span className="quantityBox">{item.quantity}</span>
+                <p className="buyerUse">{item.buyerUse}</p>
 
-                <h3 style={styles.cardTitle}>{item.title}</h3>
-
-                <span style={styles.quantityBox}>{item.quantity}</span>
-
-                <p style={styles.buyerUse}>{item.buyerUse}</p>
-
-                <div style={styles.metaGrid}>
-                  <div style={styles.metaBox}>
-                    <span style={styles.metaLabel}>Origin</span>
-                    <span style={styles.metaValue}>{item.origin}</span>
+                <div className="metaGrid">
+                  <div className="metaBox">
+                    <span className="metaLabel">Origin</span>
+                    <span className="metaValue">{item.origin}</span>
                   </div>
 
-                  <div style={styles.metaBox}>
-                    <span style={styles.metaLabel}>Price</span>
-                    <span style={styles.metaValue}>{item.price}</span>
+                  <div className="metaBox">
+                    <span className="metaLabel">Price</span>
+                    <span className="metaValue">{item.price}</span>
                   </div>
 
-                  <div style={styles.metaBox}>
-                    <span style={styles.metaLabel}>Seller</span>
-                    <span style={styles.metaValue}>{item.seller}</span>
+                  <div className="metaBox">
+                    <span className="metaLabel">Seller</span>
+                    <span className="metaValue">{item.seller}</span>
                   </div>
 
-                  <div style={styles.metaBox}>
-                    <span style={styles.metaLabel}>Platform fee</span>
-                    <span style={styles.metaValue}>{item.fee}</span>
+                  <div className="metaBox">
+                    <span className="metaLabel">Platform fee</span>
+                    <span className="metaValue">{item.fee}</span>
                   </div>
                 </div>
 
-                <div style={styles.paymentNotice}>
-                  <span style={styles.paymentLabel}>Secure payment</span>
+                <div className="paymentNotice">
+                  <span className="paymentLabel">Secure payment</span>
                   Payment is processed through Salvage Harbor. Funds are only
                   released to the seller once the buyer has received and approved
                   the corresponding items.
                 </div>
 
-                <div style={styles.cardActions}>
+                <div className="cardActions">
                   <a
                     href={`mailto:sellers@salvageharbor.eu?subject=Inquiry: ${item.title}`}
-                    style={styles.viewButton}
+                    className="viewButton"
                   >
                     Request lot
                   </a>
@@ -1101,45 +1436,29 @@ export default function Home() {
                     href={item.sourceUrl}
                     target="_blank"
                     rel="noreferrer"
-                    style={styles.sourceLink}
+                    className="sourceLink"
                   >
                     View source →
                   </a>
                 </div>
 
-                <p
-                  style={{
-                    margin: "14px 0 0",
-                    color: "#6b7280",
-                    fontSize: 12,
-                    lineHeight: 1.5,
-                  }}
-                >
-                  {item.sourceName}
-                </p>
+                <p className="photoCredit">{item.sourceName}</p>
               </div>
             </article>
           ))}
         </div>
       </section>
 
-      <section id="business" style={styles.sellerSection}>
+      <section id="business" className="sellerSection">
         <div>
-          <span style={styles.kicker}>Business model</span>
+          <span className="kicker">Business model</span>
 
-          <h2 style={styles.sectionTitle}>
+          <h2 className="sectionTitle">
             Verified maritime sellers, bulk inventory, secure payments and 10%
             commission.
           </h2>
 
-          <p
-            style={{
-              marginTop: 24,
-              color: "#5f6470",
-              lineHeight: 1.7,
-              fontSize: 17,
-            }}
-          >
+          <p className="businessText">
             Sellers can list high-value maritime inventory after verification.
             Payments are processed securely through Salvage Harbor. The seller
             only receives the funds once the buyer confirms that the
@@ -1149,66 +1468,61 @@ export default function Home() {
 
           <a
             href="#seller-application"
-            style={{ ...styles.primaryButton, marginTop: 28 }}
+            className="primaryButton"
+            style={{ marginTop: 28 }}
           >
             Apply as seller
           </a>
         </div>
 
-        <div style={styles.trustGrid}>
+        <div className="trustGrid">
           {steps.map((item) => (
-            <div style={styles.trustCard} key={item.title}>
-              <h3 style={styles.trustTitle}>{item.title}</h3>
-              <p style={styles.trustText}>{item.text}</p>
+            <div className="trustCard" key={item.title}>
+              <h3 className="trustTitle">{item.title}</h3>
+              <p className="trustText">{item.text}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section id="sellers" style={{ ...styles.section, paddingTop: 36 }}>
-        <div style={styles.sectionHead}>
+      <section id="sellers" className="section">
+        <div className="sectionHead">
           <div>
-            <span style={styles.kicker}>Seller verification</span>
-            <h2 style={styles.sectionTitle}>
+            <span className="kicker">Seller verification</span>
+            <h2 className="sectionTitle">
               Cruise liquidators and shipyards can turn large interiors into
               premium resale lots.
             </h2>
           </div>
 
-          <p style={styles.sectionIntro}>
+          <p className="sectionIntro">
             The marketplace should require seller identity, company details,
             item origin, condition photos, quantity, logistics information and
             proof that the goods are legally obtained.
           </p>
         </div>
 
-        <div style={styles.categoryGrid}>
-          <article style={styles.categoryCard}>
-            <strong style={{ fontSize: 24, letterSpacing: "-0.04em" }}>
-              Maritime-only photo standard
-            </strong>
-            <p style={{ color: "#5f6470", lineHeight: 1.6 }}>
+        <div className="categoryGrid">
+          <article className="categoryCard sellerSmallCard">
+            <strong>Maritime-only photo standard</strong>
+            <p>
               Listings should use images from the actual cruise ship, vessel,
               ferry, yacht or shipyard inventory — not generic house, road or
               office photos.
             </p>
           </article>
 
-          <article style={styles.categoryCard}>
-            <strong style={{ fontSize: 24, letterSpacing: "-0.04em" }}>
-              Legal origin
-            </strong>
-            <p style={{ color: "#5f6470", lineHeight: 1.6 }}>
+          <article className="categoryCard sellerSmallCard">
+            <strong>Legal origin</strong>
+            <p>
               Shipyard, broker, auction, liquidation or salvage documentation
               must be provided before items can go live.
             </p>
           </article>
 
-          <article style={styles.categoryCard}>
-            <strong style={{ fontSize: 24, letterSpacing: "-0.04em" }}>
-              Buyer confidence
-            </strong>
-            <p style={{ color: "#5f6470", lineHeight: 1.6 }}>
+          <article className="categoryCard sellerSmallCard">
+            <strong>Buyer confidence</strong>
+            <p>
               Buyers see origin, quantity, condition, seller verification,
               secure payment terms and clickable source links.
             </p>
@@ -1216,13 +1530,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="seller-application" style={styles.cta}>
-        <h2 style={styles.ctaTitle}>
+      <section id="seller-application" className="cta">
+        <h2 className="ctaTitle">
           Have cruise chairs, casino equipment, bar furniture or ship interior
           inventory?
         </h2>
 
-        <p style={styles.ctaText}>
+        <p className="ctaText">
           Apply to sell on Salvage Harbor. We focus on authentic maritime
           objects, cruise interiors, hospitality equipment, casino furniture,
           bulk seating and rare design pieces with clear legal origin. Payments
@@ -1232,13 +1546,13 @@ export default function Home() {
 
         <a
           href="mailto:sellers@salvageharbor.eu?subject=Seller application for Salvage Harbor"
-          style={styles.primaryButton}
+          className="primaryButton"
         >
           Apply as verified seller
         </a>
       </section>
 
-      <footer style={styles.footer}>
+      <footer className="footer">
         <span>© 2026 Salvage Harbor Europe</span>
         <span>
           Maritime inventory only · Verified sellers · Secure payment protection
