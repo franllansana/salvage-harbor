@@ -1,10 +1,19 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 const contactEmail = "info@celaris.nl";
 
-const heroVideo =
-  "https://videos.pexels.com/video-files/6749364/6749364-uhd_3840_2160_30fps.mp4";
-
-const heroVideoFallback =
-  "https://videos.pexels.com/video-files/4239913/4239913-uhd_3840_2160_30fps.mp4";
+const heroVideos = [
+  {
+    src: "https://videos.pexels.com/video-files/6749364/6749364-uhd_3840_2160_30fps.mp4",
+    label: "Cruise ship exterior",
+  },
+  {
+    src: "https://videos.pexels.com/video-files/4239913/4239913-uhd_3840_2160_30fps.mp4",
+    label: "Cruise ship interior",
+  },
+];
 
 const heroPoster =
   "https://www.msccruises.com/int/-/media/global-contents/ships/fleet/armonia/restaurants-bars/bars/palm-beach-casino-bar-msc-armonia.jpg?as=1&bc=transparent&hash=5FEFF38A850A020708304E2772C972D2&mh=720&mw=920";
@@ -245,6 +254,18 @@ const listings = [
 ];
 
 export default function Home() {
+  const [activeVideoIndex, setActiveVideoIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActiveVideoIndex((current) => (current + 1) % heroVideos.length);
+    }, 9500);
+
+    return () => window.clearInterval(timer);
+  }, []);
+
+  const activeHeroVideo = heroVideos[activeVideoIndex];
+
   return (
     <main className="min-h-screen bg-[#071013] text-white">
       <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-[#071013]/35 backdrop-blur-xl">
@@ -290,6 +311,7 @@ export default function Home() {
 
       <section className="relative min-h-screen overflow-hidden">
         <video
+          key={activeHeroVideo.src}
           autoPlay
           muted
           loop
@@ -297,8 +319,7 @@ export default function Home() {
           poster={heroPoster}
           className="absolute inset-0 h-full w-full object-cover"
         >
-          <source src={heroVideo} type="video/mp4" />
-          <source src={heroVideoFallback} type="video/mp4" />
+          <source src={activeHeroVideo.src} type="video/mp4" />
           <source src="/salvage-harbor-intro.mp4" type="video/mp4" />
         </video>
 
