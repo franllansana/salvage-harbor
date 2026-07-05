@@ -1,6 +1,9 @@
 const contactEmail = "info@celaris.nl";
 
 const heroVideo =
+  "https://videos.pexels.com/video-files/6749364/6749364-uhd_3840_2160_30fps.mp4";
+
+const heroVideoFallback =
   "https://videos.pexels.com/video-files/4239913/4239913-uhd_3840_2160_30fps.mp4";
 
 const heroPoster =
@@ -295,6 +298,7 @@ export default function Home() {
           className="absolute inset-0 h-full w-full object-cover"
         >
           <source src={heroVideo} type="video/mp4" />
+          <source src={heroVideoFallback} type="video/mp4" />
           <source src="/salvage-harbor-intro.mp4" type="video/mp4" />
         </video>
 
