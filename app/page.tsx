@@ -10,144 +10,51 @@ const categories = [
   {
     number: "01",
     title: "Casino Equipment",
-    text: "Roulette tables, poker tables, casino seating, gaming furniture and entertainment equipment from cruise ships.",
+    text: "Roulette equipment, poker tables, gaming furniture and casino seating from cruise ships.",
   },
   {
     number: "02",
     title: "Cruise Seating Lots",
-    text: "Deck chairs, lounge seats, theatre seating, restaurant chairs and bar stools in commercial volumes.",
+    text: "Deck chairs, lounge seats, theater seats, restaurant chairs and bar stools in commercial volumes.",
   },
   {
     number: "03",
     title: "Hospitality Inventory",
-    text: "Dining furniture, bar counters, buffet areas, galley equipment and horeca-ready cruise interiors.",
+    text: "Cruise dining furniture, bar counters, buffet areas, galley equipment and horeca-ready lots.",
   },
   {
     number: "04",
     title: "Cabin Furniture",
-    text: "Cabin desks, wardrobes, mirrors, bedside units and compact furniture suitable for hotels, glamping and tiny homes.",
+    text: "Bedside units, desks, wardrobes, mirrors and compact furniture from ship cabins.",
   },
   {
     number: "05",
     title: "Luxury Cruise Interior",
-    text: "Atrium décor, chandeliers, lounge pieces, wall panels, artwork, carpets, mirrors and statement design items.",
+    text: "Atrium décor, lounge pieces, wall panels, mirrors, carpets, artwork and statement design pieces.",
   },
   {
     number: "06",
     title: "Marine Objects",
-    text: "Ship bars, brass fixtures, portholes, lamps, signs, handles, nautical décor and rare maritime collector pieces.",
+    text: "Royal yacht furniture, ship bars, brass fixtures, signs, handles, lamps and collectible nautical objects.",
   },
 ];
 
-const listings = [
+const sourcing = [
   {
-    label: "Cruise casino lot",
-    category: "Casino & Entertainment",
-    title: "Cruise Casino Roulette Equipment",
-    quantity: "8 roulette tables available",
-    description:
-      "For casino concepts, private clubs, luxury game rooms, event venues and hospitality entertainment spaces.",
-    newValue: "€4,000",
-    price: "€1,950",
-    saving: "51%",
-    origin: "Antalya, Turkey",
-    seller: "Verified cruise liquidator",
-    image:
-      "https://images.unsplash.com/photo-1606167668584-78701c57f13d?auto=format&fit=crop&w=1200&q=80",
+    title: "Cruise refits & dry docks",
+    text: "Cruise ships regularly replace interiors during upgrades. Furniture, lighting, casino equipment, cabin units, theatre seating and hospitality items can become available when vessels are refurbished.",
   },
   {
-    label: "Deck seating lot",
-    category: "Seating & Furniture",
-    title: "Cruise Deck Lounge Chair Collection",
-    quantity: "180 chairs available",
-    description:
-      "Ideal for beach clubs, hotels, cruise-themed terraces, glamping lounges and event rental companies.",
-    newValue: "€430",
-    price: "€145",
-    saving: "66%",
-    origin: "Izmir, Turkey",
-    seller: "Verified shipyard broker",
-    image:
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+    title: "Shipyards & marine contractors",
+    text: "Shipyards and interior contractors often handle removal projects during refits. These projects can create large, matching commercial lots.",
   },
   {
-    label: "Theatre seating lot",
-    category: "Entertainment Interior",
-    title: "Cruise Theatre & Auditorium Seating",
-    quantity: "320 seats available",
-    description:
-      "Strong fit for cinemas, universities, event halls, private theatres and creative studios.",
-    newValue: "€350",
-    price: "€85",
-    saving: "76%",
-    origin: "Genoa, Italy",
-    seller: "Verified cruise inventory seller",
-    image:
-      "https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=1200&q=80",
+    title: "Approved ship recycling yards",
+    text: "When older vessels are responsibly recycled, reusable interiors and equipment may be removed before materials are processed.",
   },
   {
-    label: "Dining room lot",
-    category: "Hospitality Inventory",
-    title: "Cruise Dining Chair & Table Lot",
-    quantity: "240 chairs + 60 tables",
-    description:
-      "Made for restaurants, hotels, cafés, wedding venues and hospitality refurbishments.",
-    newValue: "€180",
-    price: "€65",
-    saving: "64%",
-    origin: "Hamburg, Germany",
-    seller: "Verified marine reseller",
-    image:
-      "https://images.unsplash.com/photo-1559329007-40df8a9345d8?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    label: "Ship bar package",
-    category: "Bars & Nightlife",
-    title: "Royal Yacht Bar Stools & Counter",
-    quantity: "42 stools + bar counter",
-    description:
-      "Ready for cocktail bars, rooftop venues, beach clubs, music venues and event builders.",
-    newValue: "€250",
-    price: "€90",
-    saving: "64%",
-    origin: "Edinburgh, United Kingdom",
-    seller: "Verified hospitality liquidator",
-    image:
-      "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    label: "Cruise atrium lot",
-    category: "Luxury Cruise Interior",
-    title: "Statement Cruise Atrium Décor",
-    quantity: "6 statement pieces",
-    description:
-      "Designed for hotel lobbies, restaurants, event venues and luxury maritime interior designers.",
-    newValue: "€3,500",
-    price: "€1,400",
-    saving: "60%",
-    origin: "Dover, United Kingdom",
-    seller: "Verified cruise interior seller",
-    image:
-      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80",
-  },
-];
-
-const steps = [
-  {
-    title: "Sellers apply",
-    text: "Shipyards, brokers, liquidators and maritime sellers submit inventory, company details and item information.",
-  },
-  {
-    title: "Salvage Harbor verifies",
-    text: "We review origin, quantity, condition photos, ownership proof and logistics information before publishing.",
-  },
-  {
-    title: "Buyers request lots",
-    text: "Hotels, restaurants, glamping parks, event builders and collectors request pricing, availability and transport details.",
-  },
-  {
-    title: "Payment is protected",
-    text: "Funds are only released after the buyer receives and approves the corresponding items.",
+    title: "Brokers, auctions & liquidators",
+    text: "Many items are already spread across maritime brokers, auction houses, liquidators and salvage dealers. Salvage Harbor brings that supply into one curated B2B marketplace.",
   },
 ];
 
@@ -156,9 +63,9 @@ const buyers = [
   "Restaurants",
   "Glamping parks",
   "Event builders",
+  "Casino concepts",
   "Beach clubs",
   "Interior designers",
-  "Casino concepts",
   "Collectors",
 ];
 
@@ -173,6 +80,161 @@ const supplySources = [
   "Recycling yards",
 ];
 
+const listings = [
+  {
+    image:
+      "https://images.unsplash.com/photo-1606167668584-78701c57f13d?auto=format&fit=crop&w=1200&q=80",
+    label: "Cruise casino lot",
+    category: "Casino & Entertainment",
+    title: "Cruise Casino Roulette Equipment",
+    quantity: "8 roulette tables available",
+    description:
+      "For casino concepts, private clubs, luxury game rooms, event venues and hospitality entertainment spaces.",
+    newValue: "€4,000",
+    price: "€1,950",
+    saving: "51%",
+    note: "Demo estimate based on comparable commercial-grade items, condition and volume.",
+    origin: "Antalya, Turkey",
+    priceLine: "From €1,950 each",
+    seller: "Verified cruise liquidator",
+    photo: "Photo by Derek Lynn on Unsplash",
+    source: "https://unsplash.com/",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+    label: "Deck seating lot",
+    category: "Seating & Furniture",
+    title: "Cruise Deck Lounge Chair Collection",
+    quantity: "180 chairs available",
+    description:
+      "Ideal for beach clubs, hotels, cruise-themed terraces, glamping lounges and event rental companies.",
+    newValue: "€430",
+    price: "€145",
+    saving: "66%",
+    note: "Demo estimate based on comparable commercial-grade items, condition and volume.",
+    origin: "Izmir, Turkey",
+    priceLine: "€145 per chair",
+    seller: "Verified shipyard broker",
+    photo: "Photo by Young Shih on Unsplash",
+    source: "https://unsplash.com/",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=1200&q=80",
+    label: "Cruise theater lot",
+    category: "Entertainment Interior",
+    title: "Cruise Theater & Auditorium Seating",
+    quantity: "320 seats available",
+    description:
+      "Strong fit for cinemas, universities, event halls, private theaters and creative studios.",
+    newValue: "€350",
+    price: "€85",
+    saving: "76%",
+    note: "Demo estimate based on comparable commercial-grade items, condition and volume.",
+    origin: "Genoa, Italy",
+    priceLine: "From €85 per seat",
+    seller: "Verified cruise inventory seller",
+    photo: "Photo by Steve Davison on Unsplash",
+    source: "https://unsplash.com/",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1559329007-40df8a9345d8?auto=format&fit=crop&w=1200&q=80",
+    label: "Dining room lot",
+    category: "Hospitality Inventory",
+    title: "Cruise Dining Chair & Table Lot",
+    quantity: "240 chairs + 60 tables",
+    description:
+      "Made for restaurants, hotels, cafés, wedding venues and hospitality refurbishments.",
+    newValue: "€180",
+    price: "€65",
+    saving: "64%",
+    note: "Demo estimate based on comparable commercial-grade items, condition and volume.",
+    origin: "Hamburg, Germany",
+    priceLine: "From €65 per item",
+    seller: "Verified marine reseller",
+    photo: "Photo by Oliver Hayes on Unsplash",
+    source: "https://unsplash.com/",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=1200&q=80",
+    label: "Ship bar package",
+    category: "Bars & Nightlife",
+    title: "Royal Yacht Bar Stools & Counter",
+    quantity: "42 stools + bar counter",
+    description:
+      "Ready for cocktail bars, rooftop venues, beach clubs, music venues and event builders.",
+    newValue: "€250",
+    price: "€90",
+    saving: "64%",
+    note: "Demo estimate based on comparable commercial-grade items, condition and volume.",
+    origin: "Edinburgh, United Kingdom",
+    priceLine: "From €90 per item",
+    seller: "Verified hospitality liquidator",
+    photo: "Photo by Andrew D on Unsplash",
+    source: "https://unsplash.com/",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
+    label: "Ship cabin lot",
+    category: "Cabin Interior",
+    title: "Ship Cabin Interior & Wooden Units",
+    quantity: "80 cabin sets available",
+    description:
+      "Useful for glamping pods, boutique hotels, hostels, tiny homes and themed accommodation.",
+    newValue: "€350",
+    price: "€120",
+    saving: "66%",
+    note: "Demo estimate based on comparable commercial-grade items, condition and volume.",
+    origin: "Marseille, France",
+    priceLine: "From €120 per set",
+    seller: "Verified interior broker",
+    photo: "Photo by Georg Eiermann on Unsplash",
+    source: "https://unsplash.com/",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=1200&q=80",
+    label: "Royal yacht interior",
+    category: "Marine Furniture",
+    title: "Royal Yacht Lounge Furniture",
+    quantity: "12 lounge sets available",
+    description:
+      "Popular for boutique hotels, members clubs, collectors and luxury maritime interior projects.",
+    newValue: "€5,000",
+    price: "€2,400",
+    saving: "52%",
+    note: "Demo estimate based on comparable commercial-grade items, condition and volume.",
+    origin: "Edinburgh, United Kingdom",
+    priceLine: "From €2,400 per set",
+    seller: "Verified interior broker",
+    photo: "Photo by Andrew Dawes on Unsplash",
+    source: "https://unsplash.com/",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80",
+    label: "Cruise atrium lot",
+    category: "Luxury Cruise Interior",
+    title: "Spirit of Discovery Atrium Décor",
+    quantity: "6 statement pieces",
+    description:
+      "Designed for hotel lobbies, restaurants, event venues and luxury interior designers.",
+    newValue: "€3,500",
+    price: "€1,400",
+    saving: "60%",
+    note: "Demo estimate based on comparable commercial-grade items, condition and volume.",
+    origin: "Dover, United Kingdom",
+    priceLine: "From €1,400 per piece",
+    seller: "Verified cruise interior seller",
+    photo: "Photo by Becky Fantham on Unsplash",
+    source: "https://unsplash.com/",
+  },
+];
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#071013] text-white">
@@ -180,15 +242,15 @@ export default function Home() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
           <a href="#" className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-cyan-300 text-sm font-black text-[#071013]">
-              SH
+              S
             </div>
 
             <div>
               <p className="text-sm font-bold tracking-[0.22em] text-white">
-                SALVAGE HARBOR
+                Salvage Harbor
               </p>
-              <p className="text-xs text-white/45">
-                Verified maritime inventory
+              <p className="hidden text-xs text-white/45 sm:block">
+                Verified cruise & ship salvage
               </p>
             </div>
           </a>
@@ -200,11 +262,11 @@ export default function Home() {
             <a href="#categories" className="transition hover:text-white">
               Categories
             </a>
+            <a href="#sourcing" className="transition hover:text-white">
+              Sourcing
+            </a>
             <a href="#marketplace" className="transition hover:text-white">
               Marketplace
-            </a>
-            <a href="#sellers" className="transition hover:text-white">
-              Sellers
             </a>
           </nav>
 
@@ -218,8 +280,8 @@ export default function Home() {
       </header>
 
       <section className="relative overflow-hidden">
-        <div className="absolute left-1/2 top-0 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-cyan-400/20 blur-[140px]" />
-        <div className="absolute right-0 top-40 h-[400px] w-[400px] rounded-full bg-blue-500/10 blur-[120px]" />
+        <div className="absolute left-1/2 top-0 h-[620px] w-[620px] -translate-x-1/2 rounded-full bg-cyan-400/20 blur-[150px]" />
+        <div className="absolute right-0 top-48 h-[420px] w-[420px] rounded-full bg-blue-500/10 blur-[120px]" />
 
         <div className="relative mx-auto grid max-w-7xl gap-12 px-5 py-20 md:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:py-28">
           <div className="flex flex-col justify-center">
@@ -228,14 +290,13 @@ export default function Home() {
             </div>
 
             <h1 className="max-w-4xl text-5xl font-black leading-[0.95] tracking-[-0.06em] text-white md:text-7xl">
-              Buy verified cruise ship interiors and maritime salvage lots.
+              Cruise ship interiors, casino equipment and bulk hospitality lots.
             </h1>
 
             <p className="mt-7 max-w-2xl text-lg leading-8 text-white/70 md:text-xl">
               Salvage Harbor connects verified maritime sellers with hotels,
-              restaurants, glamping parks, event companies, interior designers
-              and collectors looking for premium cruise and ship interiors with
-              real character.
+              restaurants, glamping parks, event companies and collectors
+              looking for premium cruise and ship interiors with real character.
             </p>
 
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
@@ -258,21 +319,21 @@ export default function Home() {
               <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-5">
                 <p className="text-3xl font-black text-cyan-200">Ship</p>
                 <p className="mt-2 text-sm text-white/60">
-                  Only cruise, ship, yacht or maritime-related inventory.
+                  Only cruise, ship, yacht or maritime-related inventory
                 </p>
               </div>
 
               <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-5">
                 <p className="text-3xl font-black text-cyan-200">10%</p>
                 <p className="mt-2 text-sm text-white/60">
-                  Success commission only after a completed transaction.
+                  Success commission
                 </p>
               </div>
 
               <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-5">
                 <p className="text-3xl font-black text-cyan-200">Save</p>
                 <p className="mt-2 text-sm text-white/60">
-                  Demo listings show estimated savings versus buying new.
+                  Demo listings show estimated savings versus buying new
                 </p>
               </div>
             </div>
@@ -280,21 +341,25 @@ export default function Home() {
 
           <div className="relative">
             <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] shadow-2xl shadow-black/40">
-              <div className="relative h-[520px]">
+              <div className="relative h-[540px]">
                 <img
-                  src="https://images.unsplash.com/photo-1606167668584-78701c57f13d?auto=format&fit=crop&w=1200&q=80"
-                  alt="Cruise casino roulette equipment"
+                  src={listings[0].image}
+                  alt={listings[0].title}
                   className="h-full w-full object-cover"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-[#071013] via-[#071013]/25 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#071013] via-[#071013]/20 to-transparent" />
 
                 <div className="absolute bottom-0 left-0 right-0 p-7">
                   <p className="mb-3 w-fit rounded-full bg-cyan-300 px-4 py-1.5 text-xs font-black uppercase tracking-[0.18em] text-[#071013]">
-                    Featured lot
+                    Cruise casino lot
                   </p>
 
-                  <h2 className="text-3xl font-black tracking-[-0.04em]">
+                  <p className="text-sm text-cyan-100">
+                    Featured casino lot · Antalya, Turkey
+                  </p>
+
+                  <h2 className="mt-2 text-3xl font-black tracking-[-0.04em]">
                     Cruise Casino Roulette Equipment
                   </h2>
 
@@ -302,18 +367,16 @@ export default function Home() {
                     Estimated new value €4,000 · Salvage Harbor price €1,950 ·
                     potential saving 51%.
                   </p>
+
+                  <a
+                    href={listings[0].source}
+                    target="_blank"
+                    className="mt-4 inline-block text-xs text-white/45 underline"
+                  >
+                    Photo by Derek Lynn on Unsplash →
+                  </a>
                 </div>
               </div>
-            </div>
-
-            <div className="absolute -bottom-8 -left-4 hidden rounded-3xl border border-white/10 bg-[#0d1b20]/95 p-5 shadow-2xl shadow-black/30 backdrop-blur-xl md:block">
-              <p className="text-xs uppercase tracking-[0.18em] text-white/40">
-                Seller status
-              </p>
-
-              <p className="mt-1 text-lg font-black text-white">
-                Verified maritime seller
-              </p>
             </div>
           </div>
         </div>
@@ -336,22 +399,30 @@ export default function Home() {
 
           <div className="space-y-6 text-lg leading-8 text-white/70">
             <p>
-              In simple terms: Salvage Harbor helps professional buyers find
-              verified cruise and ship interiors from trusted maritime sellers.
+              In simple terms: Salvage Harbor helps hotels, restaurants,
+              glamping parks, event builders and collectors buy verified cruise
+              and ship interiors from trusted maritime sellers.
             </p>
 
             <p>
-              It is built for people who want premium furniture, décor,
-              hospitality equipment and nautical objects without searching
-              through scattered brokers, auctions and random second-hand
-              listings.
+              Why it matters: it is a cost-effective way to source premium
+              furniture, décor and hospitality equipment with real maritime
+              character — often at a lower cost than buying new.
             </p>
 
             <p>
               We focus on bulk lots such as deck chairs, dining furniture,
-              casino equipment, theatre seating, cabin interiors, ship bars,
-              chandeliers and luxury maritime décor. Every seller must prove
-              where the items come from.
+              casino equipment, theatre seating, cabin interiors, ship bars and
+              luxury maritime décor. Every seller must prove where the items
+              come from, and payments are only released after buyer approval.
+            </p>
+
+            <p className="rounded-3xl border border-cyan-300/20 bg-cyan-300/10 p-5 text-base font-bold text-cyan-100">
+              Questions, seller applications or sourcing requests? Email{" "}
+              <a href={`mailto:${contactEmail}`} className="underline">
+                {contactEmail}
+              </a>
+              .
             </p>
           </div>
         </div>
@@ -400,7 +471,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-[#0a171b]">
+      <section id="sourcing" className="border-y border-white/10 bg-[#0a171b]">
         <div className="mx-auto max-w-7xl px-5 py-20 md:px-8">
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
             <div>
@@ -414,48 +485,23 @@ export default function Home() {
 
               <p className="mt-6 text-lg leading-8 text-white/65">
                 Salvage Harbor does not claim partnerships with specific cruise
-                lines unless a real agreement exists. The platform focuses on
-                verified maritime supply from refits, shipyards, brokers,
-                auctions, liquidators and responsible recycling partners.
+                lines. Instead, the platform focuses on verified maritime supply
+                from refits, shipyards, brokers, auctions, liquidators and
+                responsible recycling partners.
               </p>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2">
-              {supplySources.map((source) => (
+            <div className="grid gap-5 sm:grid-cols-2">
+              {sourcing.map((item) => (
                 <div
-                  key={source}
-                  className="rounded-3xl border border-white/10 bg-white/[0.04] p-5"
+                  key={item.title}
+                  className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-6"
                 >
-                  <p className="font-bold text-white">{source}</p>
+                  <h3 className="text-xl font-black tracking-[-0.04em]">
+                    {item.title}
+                  </h3>
 
-                  <p className="mt-2 text-sm leading-6 text-white/55">
-                    Potential supply source for verified maritime inventory and
-                    commercial salvage lots.
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-14 rounded-[2rem] border border-cyan-300/20 bg-cyan-300/10 p-8">
-            <h3 className="text-2xl font-black tracking-[-0.04em]">
-              Verification requirements
-            </h3>
-
-            <div className="mt-6 grid gap-4 md:grid-cols-3">
-              {[
-                "Company details",
-                "Proof of legal origin",
-                "Quantity and condition photos",
-                "Location and logistics info",
-                "Seller identity check",
-                "Buyer approval before payout",
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="rounded-2xl border border-white/10 bg-[#071013]/50 px-5 py-4 text-sm font-bold text-white/80"
-                >
-                  ✓ {item}
+                  <p className="mt-3 leading-7 text-white/60">{item.text}</p>
                 </div>
               ))}
             </div>
@@ -467,12 +513,12 @@ export default function Home() {
         <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
           <div>
             <p className="text-sm font-black uppercase tracking-[0.22em] text-cyan-200">
-              Who buys this?
+              Who buys this inventory?
             </p>
 
             <h2 className="mt-4 text-4xl font-black tracking-[-0.05em] md:text-5xl">
-              One cruise ship can supply an entire hotel, venue or glamping
-              concept.
+              One cruise ship can supply an entire hotel, event venue or
+              glamping concept.
             </h2>
 
             <p className="mt-6 text-lg leading-8 text-white/65">
@@ -495,145 +541,197 @@ export default function Home() {
         </div>
       </section>
 
-      <section
-        id="marketplace"
-        className="border-y border-white/10 bg-white/[0.03]"
-      >
-        <div className="mx-auto max-w-7xl px-5 py-20 md:px-8">
-          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-            <div className="max-w-3xl">
-              <p className="text-sm font-black uppercase tracking-[0.22em] text-cyan-200">
-                Marketplace preview
-              </p>
+      <section className="border-y border-white/10 bg-white/[0.03]">
+        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-20 md:px-8 lg:grid-cols-[0.8fr_1.2fr]">
+          <div>
+            <p className="text-sm font-black uppercase tracking-[0.22em] text-cyan-200">
+              Typical supply sources
+            </p>
 
-              <h2 className="mt-4 text-4xl font-black tracking-[-0.05em] md:text-5xl">
-                Cruise deck seating, dining rooms, casino lots and ship
-                interiors.
-              </h2>
-
-              <p className="mt-6 text-lg leading-8 text-white/65">
-                Demo marketplace preview — real seller onboarding coming soon.
-                Every listing shows estimated new value, Salvage Harbor price,
-                potential saving, origin, quantity, seller status and payment
-                protection.
-              </p>
-            </div>
-
-            <a
-              href={mailToBuyer}
-              className="rounded-full border border-cyan-300/40 px-7 py-4 text-center text-sm font-black uppercase tracking-[0.16em] text-cyan-100 transition hover:bg-cyan-300 hover:text-[#071013]"
-            >
-              Request a lot
-            </a>
+            <h2 className="mt-4 text-4xl font-black tracking-[-0.05em] md:text-5xl">
+              Built for a fragmented salvage market.
+            </h2>
           </div>
 
-          <div className="mt-12 grid gap-7 lg:grid-cols-2">
-            {listings.map((listing) => (
-              <article
-                key={listing.title}
-                className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#071013] shadow-2xl shadow-black/20"
-              >
-                <div className="relative h-72 overflow-hidden">
-                  <img
-                    src={listing.image}
-                    alt={listing.title}
-                    className="h-full w-full object-cover transition duration-500 hover:scale-105"
-                  />
+          <div>
+            <p className="max-w-3xl text-lg leading-8 text-white/65">
+              Many maritime items are already sold somewhere, but the market is
+              spread across small dealers, auctions, shipyards and brokers.
+              Salvage Harbor makes that supply easier to find, compare and buy.
+            </p>
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#071013] via-transparent to-transparent" />
-
-                  <div className="absolute left-5 top-5 rounded-full bg-white px-4 py-1.5 text-xs font-black uppercase tracking-[0.18em] text-[#071013]">
-                    {listing.label}
-                  </div>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2 md:grid-cols-4">
+              {supplySources.map((source) => (
+                <div
+                  key={source}
+                  className="rounded-2xl border border-white/10 bg-[#071013] px-5 py-4 text-sm font-bold text-white/75"
+                >
+                  {source}
                 </div>
-
-                <div className="p-7">
-                  <p className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
-                    {listing.category}
-                  </p>
-
-                  <h3 className="mt-3 text-3xl font-black tracking-[-0.05em]">
-                    {listing.title}
-                  </h3>
-
-                  <p className="mt-2 font-bold text-white/80">
-                    {listing.quantity}
-                  </p>
-
-                  <p className="mt-4 leading-7 text-white/60">
-                    {listing.description}
-                  </p>
-
-                  <div className="mt-6 grid gap-3 sm:grid-cols-3">
-                    <div className="rounded-2xl bg-white/[0.05] p-4">
-                      <p className="text-xs uppercase tracking-[0.16em] text-white/40">
-                        New value
-                      </p>
-
-                      <p className="mt-1 text-xl font-black line-through decoration-white/40">
-                        {listing.newValue}
-                      </p>
-                    </div>
-
-                    <div className="rounded-2xl bg-cyan-300 p-4 text-[#071013]">
-                      <p className="text-xs font-black uppercase tracking-[0.16em] opacity-60">
-                        SH price
-                      </p>
-
-                      <p className="mt-1 text-xl font-black">{listing.price}</p>
-                    </div>
-
-                    <div className="rounded-2xl bg-white/[0.05] p-4">
-                      <p className="text-xs uppercase tracking-[0.16em] text-white/40">
-                        Saving
-                      </p>
-
-                      <p className="mt-1 text-xl font-black text-cyan-200">
-                        {listing.saving}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="mt-6 grid gap-3 text-sm text-white/60 sm:grid-cols-2">
-                    <p>
-                      <span className="font-bold text-white">Origin:</span>{" "}
-                      {listing.origin}
-                    </p>
-
-                    <p>
-                      <span className="font-bold text-white">Seller:</span>{" "}
-                      {listing.seller}
-                    </p>
-
-                    <p>
-                      <span className="font-bold text-white">Platform fee:</span>{" "}
-                      10% success commission
-                    </p>
-
-                    <p>
-                      <span className="font-bold text-white">Payment:</span>{" "}
-                      Buyer approval before payout
-                    </p>
-                  </div>
-
-                  <a
-                    href={mailToBuyer}
-                    className="mt-7 inline-flex rounded-full bg-white px-6 py-3 text-sm font-black uppercase tracking-[0.16em] text-[#071013] transition hover:bg-cyan-200"
-                  >
-                    Request lot
-                  </a>
-                </div>
-              </article>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="sellers" className="mx-auto max-w-7xl px-5 py-20 md:px-8">
-        <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+      <section id="marketplace" className="mx-auto max-w-7xl px-5 py-20 md:px-8">
+        <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <div className="max-w-3xl">
+            <p className="text-sm font-black uppercase tracking-[0.22em] text-cyan-200">
+              Marketplace preview
+            </p>
+
+            <h2 className="mt-4 text-4xl font-black tracking-[-0.05em] md:text-5xl">
+              Cruise deck seating, dining rooms, casino lots and ship interiors.
+            </h2>
+
+            <p className="mt-6 text-lg leading-8 text-white/65">
+              Every demo listing shows estimated new value, Salvage Harbor
+              price, potential saving, origin, quantity, seller status and
+              payment protection.
+            </p>
+          </div>
+
+          <a
+            href={mailToBuyer}
+            className="rounded-full border border-cyan-300/40 px-7 py-4 text-center text-sm font-black uppercase tracking-[0.16em] text-cyan-100 transition hover:bg-cyan-300 hover:text-[#071013]"
+          >
+            Request a lot
+          </a>
+        </div>
+
+        <div className="mt-12 grid gap-8 lg:grid-cols-2">
+          {listings.map((listing) => (
+            <article
+              key={listing.title}
+              className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#0a171b] shadow-2xl shadow-black/20"
+            >
+              <div className="relative h-80 overflow-hidden">
+                <img
+                  src={listing.image}
+                  alt={listing.title}
+                  className="h-full w-full object-cover transition duration-500 hover:scale-105"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-[#071013] via-[#071013]/10 to-transparent" />
+
+                <div className="absolute left-5 top-5 rounded-full bg-white px-4 py-1.5 text-xs font-black uppercase tracking-[0.18em] text-[#071013]">
+                  {listing.label}
+                </div>
+              </div>
+
+              <div className="p-7">
+                <p className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
+                  {listing.category}
+                </p>
+
+                <h3 className="mt-3 text-3xl font-black tracking-[-0.05em]">
+                  {listing.title}
+                </h3>
+
+                <p className="mt-2 font-bold text-white/80">
+                  {listing.quantity}
+                </p>
+
+                <p className="mt-4 leading-7 text-white/60">
+                  {listing.description}
+                </p>
+
+                <div className="mt-6 grid gap-3 sm:grid-cols-3">
+                  <div className="rounded-2xl bg-white/[0.05] p-4">
+                    <p className="text-xs uppercase tracking-[0.16em] text-white/40">
+                      Estimated new value
+                    </p>
+
+                    <p className="mt-1 text-xl font-black line-through decoration-white/40">
+                      {listing.newValue}
+                    </p>
+                  </div>
+
+                  <div className="rounded-2xl bg-cyan-300 p-4 text-[#071013]">
+                    <p className="text-xs font-black uppercase tracking-[0.16em] opacity-60">
+                      Salvage Harbor price
+                    </p>
+
+                    <p className="mt-1 text-xl font-black">{listing.price}</p>
+                  </div>
+
+                  <div className="rounded-2xl bg-white/[0.05] p-4">
+                    <p className="text-xs uppercase tracking-[0.16em] text-white/40">
+                      Potential saving
+                    </p>
+
+                    <p className="mt-1 text-xl font-black text-cyan-200">
+                      {listing.saving}
+                    </p>
+                  </div>
+                </div>
+
+                <p className="mt-4 text-sm leading-6 text-white/45">
+                  {listing.note}
+                </p>
+
+                <div className="mt-6 grid gap-3 text-sm text-white/60 sm:grid-cols-2">
+                  <p>
+                    <span className="font-bold text-white">Origin</span>{" "}
+                    {listing.origin}
+                  </p>
+
+                  <p>
+                    <span className="font-bold text-white">Price</span>{" "}
+                    {listing.priceLine}
+                  </p>
+
+                  <p>
+                    <span className="font-bold text-white">Seller</span>{" "}
+                    {listing.seller}
+                  </p>
+
+                  <p>
+                    <span className="font-bold text-white">Platform fee</span>{" "}
+                    10% success commission
+                  </p>
+                </div>
+
+                <div className="mt-6 rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+                  <p className="text-sm font-bold text-white">
+                    Secure payment
+                  </p>
+
+                  <p className="mt-2 text-sm leading-6 text-white/55">
+                    Payment is processed through Salvage Harbor. Funds are only
+                    released to the seller once the buyer has received and
+                    approved the corresponding items.
+                  </p>
+                </div>
+
+                <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                  <a
+                    href={mailToBuyer}
+                    className="inline-flex rounded-full bg-white px-6 py-3 text-center text-sm font-black uppercase tracking-[0.16em] text-[#071013] transition hover:bg-cyan-200"
+                  >
+                    Request lot
+                  </a>
+
+                  <a
+                    href={listing.source}
+                    target="_blank"
+                    className="text-xs text-white/35 underline"
+                  >
+                    {listing.photo}
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="border-y border-white/10 bg-[#0a171b]">
+        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-20 md:px-8 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <p className="text-sm font-black uppercase tracking-[0.22em] text-cyan-200">
-              How it works
+              Business model
             </p>
 
             <h2 className="mt-4 text-4xl font-black tracking-[-0.05em] md:text-5xl">
@@ -645,35 +743,63 @@ export default function Home() {
               Buyers get clearer sourcing, better product information and more
               trust than buying from scattered listings across the internet.
             </p>
+
+            <p className="mt-6 rounded-3xl border border-cyan-300/20 bg-cyan-300/10 p-5 text-sm leading-6 text-cyan-100">
+              Important: Salvage Harbor should not claim to work with specific
+              cruise companies unless a real agreement exists. The safer message
+              is: inventory may originate from cruise refits, shipyards,
+              maritime brokers, auctions and verified liquidation partners.
+            </p>
           </div>
 
-          <div className="grid gap-5">
-            {steps.map((step, index) => (
+          <div className="grid gap-5 md:grid-cols-2">
+            {[
+              {
+                title: "Maritime inventory only",
+                text: "Listings must come from cruise ships, ships, ferries, yachts or verified maritime interiors — not random furniture from houses.",
+              },
+              {
+                title: "Verified sellers only",
+                text: "Shipyards, brokers, cruise liquidators and professional maritime sellers must be manually approved before listing.",
+              },
+              {
+                title: "Proof of origin required",
+                text: "Sellers must provide company details, item origin, quantity, condition photos, logistics information and proof that goods were legally obtained.",
+              },
+              {
+                title: "Buyer approval before payout",
+                text: "Payments are processed through Salvage Harbor. Funds are only released to the seller after the buyer receives and approves the items.",
+              },
+              {
+                title: "10% success commission",
+                text: "Salvage Harbor earns a 10% success fee only when a transaction is completed.",
+              },
+              {
+                title: "Contact through Celaris",
+                text: `For now, all seller applications and sourcing requests go through ${contactEmail}.`,
+              },
+            ].map((item) => (
               <div
-                key={step.title}
-                className="grid gap-5 rounded-[2rem] border border-white/10 bg-white/[0.04] p-6 md:grid-cols-[80px_1fr]"
+                key={item.title}
+                className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-6"
               >
-                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-cyan-300 text-lg font-black text-[#071013]">
-                  {index + 1}
-                </div>
+                <h3 className="text-xl font-black tracking-[-0.04em]">
+                  {item.title}
+                </h3>
 
-                <div>
-                  <h3 className="text-2xl font-black tracking-[-0.04em]">
-                    {step.title}
-                  </h3>
-
-                  <p className="mt-2 leading-7 text-white/60">{step.text}</p>
-                </div>
+                <p className="mt-3 leading-7 text-white/60">{item.text}</p>
               </div>
             ))}
           </div>
         </div>
+      </section>
 
-        <div className="mt-16 overflow-hidden rounded-[2.5rem] border border-cyan-300/20 bg-cyan-300 text-[#071013]">
+      <section id="sellers" className="mx-auto max-w-7xl px-5 py-20 md:px-8">
+        <div className="overflow-hidden rounded-[2.5rem] border border-cyan-300/20 bg-cyan-300 text-[#071013]">
           <div className="grid gap-10 p-8 md:p-12 lg:grid-cols-[1fr_0.75fr]">
             <div>
               <p className="text-sm font-black uppercase tracking-[0.22em] opacity-60">
-                Contact & applications
+                Apply as seller
               </p>
 
               <h2 className="mt-4 text-4xl font-black tracking-[-0.06em] md:text-6xl">
@@ -721,7 +847,7 @@ export default function Home() {
 
       <footer className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col gap-5 px-5 py-10 text-sm text-white/50 md:flex-row md:items-center md:justify-between md:px-8">
-          <p>© 2026 Salvage Harbor Europe. Operated by Celaris.</p>
+          <p>© 2026 Salvage Harbor Europe</p>
 
           <div className="flex flex-wrap gap-4">
             <span>Maritime inventory only</span>
