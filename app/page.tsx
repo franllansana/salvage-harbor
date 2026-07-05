@@ -1,5 +1,11 @@
 const contactEmail = "info@celaris.nl";
 
+const heroVideo =
+  "https://videos.pexels.com/video-files/7007353/7007353-hd_1920_1080_25fps.mp4";
+
+const heroPoster =
+  "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1800&q=80";
+
 const mailToSeller =
   "mailto:info@celaris.nl?subject=Salvage%20Harbor%20seller%20application";
 
@@ -238,10 +244,10 @@ const listings = [
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#071013] text-white">
-      <header className="sticky top-0 z-50 border-b border-white/10 bg-[#071013]/90 backdrop-blur-xl">
+      <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-[#071013]/35 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
           <a href="#" className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-cyan-300 text-sm font-black text-[#071013]">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-sm font-black text-[#071013]">
               S
             </div>
 
@@ -249,13 +255,13 @@ export default function Home() {
               <p className="text-sm font-bold tracking-[0.22em] text-white">
                 Salvage Harbor
               </p>
-              <p className="hidden text-xs text-white/45 sm:block">
+              <p className="hidden text-xs text-white/50 sm:block">
                 Verified cruise & ship salvage
               </p>
             </div>
           </a>
 
-          <nav className="hidden items-center gap-8 text-sm text-white/70 md:flex">
+          <nav className="hidden items-center gap-8 text-sm text-white/75 md:flex">
             <a href="#what-we-do" className="transition hover:text-white">
               What we do
             </a>
@@ -279,105 +285,81 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="relative overflow-hidden">
-        <div className="absolute left-1/2 top-0 h-[620px] w-[620px] -translate-x-1/2 rounded-full bg-cyan-400/20 blur-[150px]" />
-        <div className="absolute right-0 top-48 h-[420px] w-[420px] rounded-full bg-blue-500/10 blur-[120px]" />
+      <section className="relative min-h-screen overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster={heroPoster}
+          className="absolute inset-0 h-full w-full object-cover"
+        >
+          <source src={heroVideo} type="video/mp4" />
+          <source src="/salvage-harbor-intro.mp4" type="video/mp4" />
+        </video>
 
-        <div className="relative mx-auto grid max-w-7xl gap-12 px-5 py-20 md:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:py-28">
-          <div className="flex flex-col justify-center">
-            <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-cyan-300/30 bg-cyan-300/10 px-4 py-2 text-sm font-medium text-cyan-100">
+        <div className="absolute inset-0 bg-[#071013]/45" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#071013] via-[#071013]/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#071013] via-transparent to-transparent" />
+
+        <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl items-end px-5 pb-20 pt-32 md:px-8 md:pb-28">
+          <div className="max-w-4xl">
+            <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-2 text-sm font-medium text-white backdrop-blur-xl">
               Verified European cruise & ship salvage marketplace
             </div>
 
-            <h1 className="max-w-4xl text-5xl font-black leading-[0.95] tracking-[-0.06em] text-white md:text-7xl">
-              Cruise ship interiors, casino equipment and bulk hospitality lots.
+            <h1 className="text-5xl font-black leading-[0.92] tracking-[-0.07em] text-white md:text-8xl">
+              Maritime interiors with a second life.
             </h1>
 
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/70 md:text-xl">
-              Salvage Harbor connects verified maritime sellers with hotels,
-              restaurants, glamping parks, event companies and collectors
-              looking for premium cruise and ship interiors with real character.
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/75 md:text-xl">
+              Verified cruise, yacht and ship interiors for hotels,
+              restaurants, glamping concepts, event builders and collectors.
             </p>
 
-            <div className="mt-9 flex flex-col gap-4 sm:flex-row">
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <a
                 href="#marketplace"
-                className="rounded-full bg-cyan-300 px-7 py-4 text-center text-sm font-black uppercase tracking-[0.16em] text-[#071013] transition hover:bg-cyan-200"
+                className="rounded-full bg-white px-8 py-4 text-center text-sm font-black uppercase tracking-[0.16em] text-[#071013] transition hover:bg-cyan-200"
               >
                 Explore marketplace
               </a>
 
               <a
                 href={mailToSeller}
-                className="rounded-full border border-white/15 px-7 py-4 text-center text-sm font-black uppercase tracking-[0.16em] text-white transition hover:border-cyan-300/60 hover:bg-white/5"
+                className="rounded-full border border-white/25 bg-white/5 px-8 py-4 text-center text-sm font-black uppercase tracking-[0.16em] text-white backdrop-blur-xl transition hover:bg-white/15"
               >
-                Apply as verified seller
+                Apply as seller
               </a>
             </div>
 
-            <div className="mt-12 grid max-w-2xl grid-cols-1 gap-4 sm:grid-cols-3">
-              <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-5">
-                <p className="text-3xl font-black text-cyan-200">Ship</p>
-                <p className="mt-2 text-sm text-white/60">
+            <div className="mt-12 grid max-w-3xl grid-cols-1 gap-4 sm:grid-cols-3">
+              <div className="rounded-3xl border border-white/15 bg-white/10 p-5 backdrop-blur-xl">
+                <p className="text-3xl font-black text-white">Ship</p>
+                <p className="mt-2 text-sm text-white/65">
                   Only cruise, ship, yacht or maritime-related inventory
                 </p>
               </div>
 
-              <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-5">
-                <p className="text-3xl font-black text-cyan-200">10%</p>
-                <p className="mt-2 text-sm text-white/60">
+              <div className="rounded-3xl border border-white/15 bg-white/10 p-5 backdrop-blur-xl">
+                <p className="text-3xl font-black text-white">10%</p>
+                <p className="mt-2 text-sm text-white/65">
                   Success commission
                 </p>
               </div>
 
-              <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-5">
-                <p className="text-3xl font-black text-cyan-200">Save</p>
-                <p className="mt-2 text-sm text-white/60">
-                  Demo listings show estimated savings versus buying new
+              <div className="rounded-3xl border border-white/15 bg-white/10 p-5 backdrop-blur-xl">
+                <p className="text-3xl font-black text-white">Save</p>
+                <p className="mt-2 text-sm text-white/65">
+                  Estimated savings versus buying new
                 </p>
               </div>
             </div>
-          </div>
 
-          <div className="relative">
-            <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] shadow-2xl shadow-black/40">
-              <div className="relative h-[540px]">
-                <img
-                  src={listings[0].image}
-                  alt={listings[0].title}
-                  className="h-full w-full object-cover"
-                />
-
-                <div className="absolute inset-0 bg-gradient-to-t from-[#071013] via-[#071013]/20 to-transparent" />
-
-                <div className="absolute bottom-0 left-0 right-0 p-7">
-                  <p className="mb-3 w-fit rounded-full bg-cyan-300 px-4 py-1.5 text-xs font-black uppercase tracking-[0.18em] text-[#071013]">
-                    Cruise casino lot
-                  </p>
-
-                  <p className="text-sm text-cyan-100">
-                    Featured casino lot · Antalya, Turkey
-                  </p>
-
-                  <h2 className="mt-2 text-3xl font-black tracking-[-0.04em]">
-                    Cruise Casino Roulette Equipment
-                  </h2>
-
-                  <p className="mt-3 max-w-md text-sm leading-6 text-white/70">
-                    Estimated new value €4,000 · Salvage Harbor price €1,950 ·
-                    potential saving 51%.
-                  </p>
-
-                  <a
-                    href={listings[0].source}
-                    target="_blank"
-                    className="mt-4 inline-block text-xs text-white/45 underline"
-                  >
-                    Cruise casino image source →
-                  </a>
-                </div>
-              </div>
-            </div>
+            <p className="mt-8 text-xs text-white/40">
+              Intro video source: Pexels luxury yacht interior. If the video
+              does not load, add your own file as /public/salvage-harbor-intro.mp4.
+            </p>
           </div>
         </div>
       </section>
