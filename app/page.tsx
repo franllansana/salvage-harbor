@@ -1,10 +1,9 @@
 const contactEmail = "info@celaris.nl";
 
-const heroVideo =
-  "https://videos.pexels.com/video-files/34293836/34293836-hd_1920_1080_30fps.mp4";
+const heroVideo = "/salvage-harbor-intro.mp4";
 
-const heroPoster =
-  "https://images.pexels.com/videos/34293836/2025-october-34293836.jpeg?cs=tinysrgb&w=1600";
+const fallbackHeroVideo =
+  "https://videos.pexels.com/video-files/4239913/4239913-uhd_3840_2160_30fps.mp4";
 
 const mailToSeller =
   "mailto:info@celaris.nl?subject=Salvage%20Harbor%20seller%20application";
@@ -243,7 +242,7 @@ const listings = [
 
 function StatCard({ title, text }: { title: string; text: string }) {
   return (
-    <div className="rounded-[1.75rem] border border-white/15 bg-white/10 p-5 backdrop-blur-xl md:rounded-3xl md:p-5">
+    <div className="rounded-[1.75rem] border border-white/15 bg-white/10 p-5 backdrop-blur-xl md:rounded-3xl">
       <p className="text-[2rem] font-black leading-none text-white md:text-3xl">
         {title}
       </p>
@@ -255,7 +254,7 @@ function StatCard({ title, text }: { title: string; text: string }) {
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#071013] text-white">
-      <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-[#071013]/45 backdrop-blur-xl">
+      <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-[#071013]/55 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 md:px-8 md:py-4">
           <a href="#" className="flex min-w-0 items-center gap-3">
             <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white text-lg font-black text-[#071013] md:h-10 md:w-10 md:text-sm">
@@ -296,60 +295,38 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="relative min-h-[100svh] overflow-hidden">
-        <div className="absolute inset-0">
+      <section className="relative overflow-hidden bg-[#071013]">
+        <div className="absolute inset-0 hidden min-h-[100svh] md:block">
           <video
             autoPlay
             muted
             loop
             playsInline
-            poster={heroPoster}
-            className="absolute inset-0 h-full w-full scale-110 object-cover blur-xl"
+            preload="auto"
+            className="absolute inset-0 h-full w-full object-cover"
           >
             <source src={heroVideo} type="video/mp4" />
-            <source src="/salvage-harbor-intro.mp4" type="video/mp4" />
+            <source src={fallbackHeroVideo} type="video/mp4" />
           </video>
-
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            poster={heroPoster}
-            className="absolute inset-0 h-full w-full object-contain md:hidden"
-          >
-            <source src={heroVideo} type="video/mp4" />
-            <source src="/salvage-harbor-intro.mp4" type="video/mp4" />
-          </video>
-
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            poster={heroPoster}
-            className="absolute inset-0 hidden h-full w-full object-cover md:block"
-          >
-            <source src={heroVideo} type="video/mp4" />
-            <source src="/salvage-harbor-intro.mp4" type="video/mp4" />
-          </video>
-
-          <div className="absolute inset-0 bg-[#071013]/55 md:bg-[#071013]/45" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#071013] via-[#071013]/65 to-[#071013]/15 md:to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#071013] via-[#071013]/10 to-[#071013]/20" />
         </div>
 
-        <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-7xl items-end px-4 pb-12 pt-28 md:px-8 md:pb-28 md:pt-32">
+        <div className="absolute inset-0 min-h-[100svh] bg-[radial-gradient(circle_at_20%_20%,rgba(103,232,249,0.22),transparent_32%),radial-gradient(circle_at_80%_35%,rgba(255,255,255,0.13),transparent_28%),linear-gradient(135deg,#071013_0%,#0b2028_42%,#111827_100%)] md:hidden" />
+
+        <div className="absolute inset-0 bg-[#071013]/45 md:bg-[#071013]/35" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#071013] via-[#071013]/65 to-[#071013]/10 md:to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#071013] via-transparent to-[#071013]/15" />
+
+        <div className="relative z-10 mx-auto max-w-7xl px-4 pb-14 pt-28 md:min-h-screen md:px-8 md:pb-28 md:pt-32">
           <div className="max-w-4xl">
-            <div className="mb-5 inline-flex max-w-[330px] rounded-full border border-white/20 bg-white/10 px-5 py-3 text-base font-medium leading-6 text-white backdrop-blur-xl md:max-w-none md:px-4 md:py-2 md:text-sm">
+            <div className="mb-6 inline-flex max-w-[340px] rounded-full border border-white/20 bg-white/10 px-5 py-3 text-base font-medium leading-6 text-white backdrop-blur-xl md:max-w-none md:items-center md:gap-2 md:px-4 md:py-2 md:text-sm">
               Verified European cruise & ship salvage marketplace
             </div>
 
-            <h1 className="max-w-[720px] text-[3rem] font-black leading-[0.9] tracking-[-0.075em] text-white sm:text-[4rem] md:text-8xl">
+            <h1 className="max-w-[700px] text-[3rem] font-black leading-[0.9] tracking-[-0.08em] text-white sm:text-[4.2rem] md:text-8xl">
               Maritime interiors with a second life.
             </h1>
 
-            <p className="mt-6 max-w-[650px] text-[1.05rem] leading-8 text-white/80 sm:text-lg md:mt-7 md:text-xl md:text-white/75">
+            <p className="mt-6 max-w-[650px] text-[1.05rem] leading-8 text-white/80 sm:text-lg md:mt-7 md:text-xl md:leading-8 md:text-white/75">
               Verified cruise, yacht and ship interiors for hotels,
               restaurants, glamping concepts, event builders and collectors.
             </p>
