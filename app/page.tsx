@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const contactEmail = "info@celaris.nl";
 
@@ -16,7 +16,7 @@ const heroVideos = [
 ];
 
 const heroPoster =
-  "https://www.msccruises.com/int/-/media/global-contents/ships/fleet/armonia/restaurants-bars/bars/palm-beach-casino-bar-msc-armonia.jpg?as=1&bc=transparent&hash=5FEFF38A850A020708304E2772C972D2&mh=720&mw=920";
+  "https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=1800&q=80";
 
 const mailToSeller =
   "mailto:info@celaris.nl?subject=Salvage%20Harbor%20seller%20application";
@@ -255,14 +255,49 @@ const listings = [
 
 export default function Home() {
   const [activeVideoIndex, setActiveVideoIndex] = useState(0);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
   useEffect(() => {
     const timer = window.setInterval(() => {
       setActiveVideoIndex((current) => (current + 1) % heroVideos.length);
-    }, 9500);
+    }, 11000);
 
     return () => window.clearInterval(timer);
   }, []);
+
+  useEffect(() => {
+    const video = videoRef.current;
+
+    if (!video) return;
+
+    video.muted = true;
+    video.playsInline = true;
+    video.setAttribute("muted", "");
+    video.setAttribute("playsinline", "");
+    video.setAttribute("webkit-playsinline", "");
+
+    const playVideo = async () => {
+      try {
+        await video.play();
+      } catch {
+        // iPhone kan autoplay blokkeren als Low Power Mode aan staat.
+      }
+    };
+
+    playVideo();
+
+    const handleVisibilityChange = () => {
+      if (!document.hidden) {
+        playVideo();
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
+  }, [activeVideoIndex]);
 
   const activeHeroVideo = heroVideos[activeVideoIndex];
 
@@ -309,15 +344,19 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="relative min-h-screen overflow-hidden">
+      <section className="relative min-h-[100svh] overflow-hidden">
         <video
           key={activeHeroVideo.src}
+          ref={videoRef}
           autoPlay
           muted
           loop
           playsInline
+          preload="auto"
           poster={heroPoster}
-          className="absolute inset-0 h-full w-full object-cover"
+          disablePictureInPicture
+          controlsList="nodownload noplaybackrate nofullscreen"
+          className="absolute inset-0 h-full w-full object-cover object-center"
         >
           <source src={activeHeroVideo.src} type="video/mp4" />
           <source src="/salvage-harbor-intro.mp4" type="video/mp4" />
@@ -327,7 +366,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#071013] via-[#071013]/50 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#071013] via-transparent to-transparent" />
 
-        <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl items-end px-5 pb-20 pt-32 md:px-8 md:pb-28">
+        <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-7xl items-end px-5 pb-16 pt-32 md:px-8 md:pb-28">
           <div className="max-w-4xl">
             <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-2 text-sm font-medium text-white backdrop-blur-xl">
               Verified European cruise & ship salvage marketplace
@@ -832,38 +871,4 @@ export default function Home() {
             <div className="flex flex-col justify-end gap-4">
               <a
                 href={mailToSeller}
-                className="rounded-full bg-[#071013] px-7 py-4 text-center text-sm font-black uppercase tracking-[0.16em] text-white transition hover:bg-[#10242a]"
-              >
-                Apply as verified seller
-              </a>
-
-              <a
-                href={mailToBuyer}
-                className="rounded-full border border-[#071013]/25 px-7 py-4 text-center text-sm font-black uppercase tracking-[0.16em] text-[#071013] transition hover:bg-[#071013]/10"
-              >
-                Send sourcing request
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <footer className="border-t border-white/10">
-        <div className="mx-auto flex max-w-7xl flex-col gap-5 px-5 py-10 text-sm text-white/50 md:flex-row md:items-center md:justify-between md:px-8">
-          <p>© 2026 Salvage Harbor Europe</p>
-
-          <div className="flex flex-wrap gap-4">
-            <span>Maritime inventory only</span>
-            <span>Verified sellers</span>
-            <span>Secure payment protection</span>
-            <span>10% commission</span>
-
-            <a href={`mailto:${contactEmail}`} className="text-cyan-200">
-              {contactEmail}
-            </a>
-          </div>
-        </div>
-      </footer>
-    </main>
-  );
-}
+                className="rounded-full bg-[#071013] px-7 py-4 text-center text-sm
