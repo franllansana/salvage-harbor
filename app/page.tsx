@@ -1,22 +1,10 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
-
 const contactEmail = "info@celaris.nl";
 
-const heroVideos = [
-  {
-    src: "https://videos.pexels.com/video-files/6749364/6749364-uhd_3840_2160_30fps.mp4",
-    label: "Cruise ship exterior",
-  },
-  {
-    src: "https://videos.pexels.com/video-files/4239913/4239913-uhd_3840_2160_30fps.mp4",
-    label: "Cruise ship interior",
-  },
-];
+const heroVideo =
+  "https://videos.pexels.com/video-files/4239913/4239913-uhd_3840_2160_30fps.mp4";
 
 const heroPoster =
-  "https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=1800&q=80";
+  "https://www.msccruises.com/int/-/media/global-contents/ships/fleet/armonia/restaurants-bars/bars/palm-beach-casino-bar-msc-armonia.jpg?as=1&bc=transparent&hash=5FEFF38A850A020708304E2772C972D2&mh=720&mw=920";
 
 const mailToSeller =
   "mailto:info@celaris.nl?subject=Salvage%20Harbor%20seller%20application";
@@ -253,65 +241,35 @@ const listings = [
   },
 ];
 
+function StatCard({
+  title,
+  text,
+}: {
+  title: string;
+  text: string;
+}) {
+  return (
+    <div className="rounded-[1.75rem] border border-white/15 bg-white/10 p-5 backdrop-blur-xl md:rounded-3xl md:p-5">
+      <p className="text-[2rem] font-black leading-none text-white md:text-3xl">
+        {title}
+      </p>
+      <p className="mt-2 text-sm leading-6 text-white/65">{text}</p>
+    </div>
+  );
+}
+
 export default function Home() {
-  const [activeVideoIndex, setActiveVideoIndex] = useState(0);
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-
-  useEffect(() => {
-    const timer = window.setInterval(() => {
-      setActiveVideoIndex((current) => (current + 1) % heroVideos.length);
-    }, 11000);
-
-    return () => window.clearInterval(timer);
-  }, []);
-
-  useEffect(() => {
-    const video = videoRef.current;
-
-    if (!video) return;
-
-    video.muted = true;
-    video.playsInline = true;
-    video.setAttribute("muted", "");
-    video.setAttribute("playsinline", "");
-    video.setAttribute("webkit-playsinline", "");
-
-    const playVideo = async () => {
-      try {
-        await video.play();
-      } catch {
-        // iPhone kan autoplay blokkeren als Low Power Mode aan staat.
-      }
-    };
-
-    playVideo();
-
-    const handleVisibilityChange = () => {
-      if (!document.hidden) {
-        playVideo();
-      }
-    };
-
-    document.addEventListener("visibilitychange", handleVisibilityChange);
-
-    return () => {
-      document.removeEventListener("visibilitychange", handleVisibilityChange);
-    };
-  }, [activeVideoIndex]);
-
-  const activeHeroVideo = heroVideos[activeVideoIndex];
-
   return (
     <main className="min-h-screen bg-[#071013] text-white">
-      <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-[#071013]/35 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
-          <a href="#" className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-sm font-black text-[#071013]">
+      <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-[#071013]/45 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 md:px-8 md:py-4">
+          <a href="#" className="flex min-w-0 items-center gap-3">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white text-lg font-black text-[#071013] md:h-10 md:w-10 md:text-sm">
               S
             </div>
 
-            <div>
-              <p className="text-sm font-bold tracking-[0.22em] text-white">
+            <div className="min-w-0">
+              <p className="truncate text-[0.95rem] font-bold tracking-[0.16em] text-white md:text-sm md:tracking-[0.22em]">
                 Salvage Harbor
               </p>
               <p className="hidden text-xs text-white/50 sm:block">
@@ -337,87 +295,73 @@ export default function Home() {
 
           <a
             href={mailToSeller}
-            className="rounded-full bg-white px-5 py-2.5 text-sm font-bold text-[#071013] transition hover:bg-cyan-200"
+            className="shrink-0 rounded-full bg-white px-5 py-3 text-sm font-bold text-[#071013] transition hover:bg-cyan-200 md:px-5 md:py-2.5"
           >
             Request access
           </a>
         </div>
       </header>
 
-      <section className="relative min-h-[100svh] overflow-hidden">
-        <video
-          key={activeHeroVideo.src}
-          ref={videoRef}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          poster={heroPoster}
-          disablePictureInPicture
-          controlsList="nodownload noplaybackrate nofullscreen"
-          className="absolute inset-0 h-full w-full object-cover object-center"
-        >
-          <source src={activeHeroVideo.src} type="video/mp4" />
-          <source src="/salvage-harbor-intro.mp4" type="video/mp4" />
-        </video>
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 h-full min-h-[100svh]">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster={heroPoster}
+            className="absolute inset-0 h-full w-full object-cover"
+          >
+            <source src={heroVideo} type="video/mp4" />
+            <source src="/salvage-harbor-intro.mp4" type="video/mp4" />
+          </video>
 
-        <div className="absolute inset-0 bg-[#071013]/45" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#071013] via-[#071013]/50 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#071013] via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-[#071013]/55 md:bg-[#071013]/45" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#071013] via-[#071013]/65 to-[#071013]/10 md:to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#071013] via-transparent to-[#071013]/15" />
+        </div>
 
-        <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-7xl items-end px-5 pb-16 pt-32 md:px-8 md:pb-28">
+        <div className="relative z-10 mx-auto max-w-7xl px-4 pb-14 pt-28 md:px-8 md:pb-28 md:pt-32">
           <div className="max-w-4xl">
-            <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-2 text-sm font-medium text-white backdrop-blur-xl">
+            <div className="mb-6 inline-flex max-w-[340px] rounded-full border border-white/20 bg-white/10 px-5 py-3 text-base font-medium leading-6 text-white backdrop-blur-xl md:max-w-none md:items-center md:gap-2 md:px-4 md:py-2 md:text-sm">
               Verified European cruise & ship salvage marketplace
             </div>
 
-            <h1 className="text-5xl font-black leading-[0.92] tracking-[-0.07em] text-white md:text-8xl">
+            <h1 className="max-w-[700px] text-[3.3rem] font-black leading-[0.88] tracking-[-0.08em] text-white sm:text-[4.2rem] md:text-8xl">
               Maritime interiors with a second life.
             </h1>
 
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/75 md:text-xl">
+            <p className="mt-6 max-w-[650px] text-[1.05rem] leading-8 text-white/80 sm:text-lg md:mt-7 md:text-xl md:leading-8 md:text-white/75">
               Verified cruise, yacht and ship interiors for hotels,
               restaurants, glamping concepts, event builders and collectors.
             </p>
 
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row md:mt-10">
               <a
                 href="#marketplace"
-                className="rounded-full bg-white px-8 py-4 text-center text-sm font-black uppercase tracking-[0.16em] text-[#071013] transition hover:bg-cyan-200"
+                className="w-full rounded-full bg-white px-8 py-4 text-center text-[0.95rem] font-black uppercase tracking-[0.18em] text-[#071013] transition hover:bg-cyan-200 sm:w-auto"
               >
                 Explore marketplace
               </a>
 
               <a
                 href={mailToSeller}
-                className="rounded-full border border-white/25 bg-white/5 px-8 py-4 text-center text-sm font-black uppercase tracking-[0.16em] text-white backdrop-blur-xl transition hover:bg-white/15"
+                className="w-full rounded-full border border-white/25 bg-white/5 px-8 py-4 text-center text-[0.95rem] font-black uppercase tracking-[0.18em] text-white backdrop-blur-xl transition hover:bg-white/15 sm:w-auto"
               >
                 Apply as seller
               </a>
             </div>
 
-            <div className="mt-12 grid max-w-3xl grid-cols-1 gap-4 sm:grid-cols-3">
-              <div className="rounded-3xl border border-white/15 bg-white/10 p-5 backdrop-blur-xl">
-                <p className="text-3xl font-black text-white">Ship</p>
-                <p className="mt-2 text-sm text-white/65">
-                  Only cruise, ship, yacht or maritime-related inventory
-                </p>
-              </div>
-
-              <div className="rounded-3xl border border-white/15 bg-white/10 p-5 backdrop-blur-xl">
-                <p className="text-3xl font-black text-white">10%</p>
-                <p className="mt-2 text-sm text-white/65">
-                  Success commission
-                </p>
-              </div>
-
-              <div className="rounded-3xl border border-white/15 bg-white/10 p-5 backdrop-blur-xl">
-                <p className="text-3xl font-black text-white">Save</p>
-                <p className="mt-2 text-sm text-white/65">
-                  Estimated savings versus buying new
-                </p>
-              </div>
+            <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3 md:mt-12">
+              <StatCard
+                title="Ship"
+                text="Only cruise, ship, yacht or maritime-related inventory"
+              />
+              <StatCard title="10%" text="Success commission" />
+              <StatCard
+                title="Save"
+                text="Estimated savings versus buying new"
+              />
             </div>
           </div>
         </div>
@@ -427,18 +371,18 @@ export default function Home() {
         id="what-we-do"
         className="border-y border-white/10 bg-white/[0.03]"
       >
-        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-20 md:px-8 lg:grid-cols-[0.8fr_1.2fr]">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 md:px-8 md:py-20 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
-            <p className="text-sm font-black uppercase tracking-[0.22em] text-cyan-200">
+            <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-200 md:text-sm">
               What we do
             </p>
 
-            <h2 className="mt-4 text-4xl font-black tracking-[-0.05em] text-white md:text-5xl">
+            <h2 className="mt-4 text-3xl font-black tracking-[-0.05em] text-white md:text-5xl">
               A simple way to buy verified cruise and ship interiors.
             </h2>
           </div>
 
-          <div className="space-y-6 text-lg leading-8 text-white/70">
+          <div className="space-y-5 text-base leading-8 text-white/70 md:space-y-6 md:text-lg">
             <p>
               In simple terms: Salvage Harbor helps hotels, restaurants,
               glamping parks, event builders and collectors buy verified cruise
@@ -469,30 +413,33 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="categories" className="mx-auto max-w-7xl px-5 py-20 md:px-8">
+      <section
+        id="categories"
+        className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20"
+      >
         <div className="max-w-3xl">
-          <p className="text-sm font-black uppercase tracking-[0.22em] text-cyan-200">
+          <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-200 md:text-sm">
             High-value categories
           </p>
 
-          <h2 className="mt-4 text-4xl font-black tracking-[-0.05em] md:text-5xl">
+          <h2 className="mt-4 text-3xl font-black tracking-[-0.05em] md:text-5xl">
             Not random furniture. Real cruise, ship and yacht interiors.
           </h2>
 
-          <p className="mt-6 text-lg leading-8 text-white/65">
+          <p className="mt-5 text-base leading-8 text-white/65 md:mt-6 md:text-lg">
             Cruise ships are floating hotels. That means valuable furniture,
             horeca equipment, casino items, theatre seating and decorative
             pieces can be resold as professional project-ready lots.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-5 md:mt-12 md:grid-cols-2 lg:grid-cols-3">
           {categories.map((item) => (
             <article
               key={item.title}
-              className="group rounded-[2rem] border border-white/10 bg-white/[0.04] p-7 transition hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-white/[0.07]"
+              className="group rounded-[1.75rem] border border-white/10 bg-white/[0.04] p-6 transition hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-white/[0.07] md:rounded-[2rem] md:p-7"
             >
-              <div className="mb-8 flex items-center justify-between">
+              <div className="mb-6 flex items-center justify-between md:mb-8">
                 <span className="text-sm font-black text-cyan-200">
                   {item.number}
                 </span>
@@ -513,18 +460,18 @@ export default function Home() {
       </section>
 
       <section id="sourcing" className="border-y border-white/10 bg-[#0a171b]">
-        <div className="mx-auto max-w-7xl px-5 py-20 md:px-8">
+        <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
             <div>
-              <p className="text-sm font-black uppercase tracking-[0.22em] text-cyan-200">
+              <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-200 md:text-sm">
                 Sourcing & Trust
               </p>
 
-              <h2 className="mt-4 text-4xl font-black tracking-[-0.05em] md:text-5xl">
+              <h2 className="mt-4 text-3xl font-black tracking-[-0.05em] md:text-5xl">
                 Where the inventory can come from.
               </h2>
 
-              <p className="mt-6 text-lg leading-8 text-white/65">
+              <p className="mt-5 text-base leading-8 text-white/65 md:mt-6 md:text-lg">
                 Salvage Harbor does not claim partnerships with specific cruise
                 lines. Instead, the platform focuses on verified maritime supply
                 from refits, shipyards, brokers, auctions, liquidators and
@@ -536,7 +483,7 @@ export default function Home() {
               {sourcing.map((item) => (
                 <div
                   key={item.title}
-                  className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-6"
+                  className="rounded-[1.75rem] border border-white/10 bg-white/[0.04] p-6 md:rounded-[2rem]"
                 >
                   <h3 className="text-xl font-black tracking-[-0.04em]">
                     {item.title}
@@ -550,19 +497,19 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-20 md:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
         <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
           <div>
-            <p className="text-sm font-black uppercase tracking-[0.22em] text-cyan-200">
+            <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-200 md:text-sm">
               Who buys this inventory?
             </p>
 
-            <h2 className="mt-4 text-4xl font-black tracking-[-0.05em] md:text-5xl">
+            <h2 className="mt-4 text-3xl font-black tracking-[-0.05em] md:text-5xl">
               One cruise ship can supply an entire hotel, event venue or
               glamping concept.
             </h2>
 
-            <p className="mt-6 text-lg leading-8 text-white/65">
+            <p className="mt-5 text-base leading-8 text-white/65 md:mt-6 md:text-lg">
               Matching deck chairs, dining furniture, bar counters, theatre
               seats, casino equipment and cabin furniture are easier to sell
               when positioned as complete commercial lots.
@@ -573,7 +520,7 @@ export default function Home() {
             {buyers.map((buyer) => (
               <div
                 key={buyer}
-                className="flex min-h-28 items-end rounded-3xl border border-white/10 bg-white/[0.04] p-5 font-black text-white"
+                className="flex min-h-24 items-end rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-4 font-black text-white md:min-h-28 md:rounded-3xl md:p-5"
               >
                 {buyer}
               </div>
@@ -583,19 +530,19 @@ export default function Home() {
       </section>
 
       <section className="border-y border-white/10 bg-white/[0.03]">
-        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-20 md:px-8 lg:grid-cols-[0.8fr_1.2fr]">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 md:px-8 md:py-20 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
-            <p className="text-sm font-black uppercase tracking-[0.22em] text-cyan-200">
+            <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-200 md:text-sm">
               Typical supply sources
             </p>
 
-            <h2 className="mt-4 text-4xl font-black tracking-[-0.05em] md:text-5xl">
+            <h2 className="mt-4 text-3xl font-black tracking-[-0.05em] md:text-5xl">
               Built for a fragmented salvage market.
             </h2>
           </div>
 
           <div>
-            <p className="max-w-3xl text-lg leading-8 text-white/65">
+            <p className="max-w-3xl text-base leading-8 text-white/65 md:text-lg">
               Many maritime items are already sold somewhere, but the market is
               spread across small dealers, auctions, shipyards and brokers.
               Salvage Harbor makes that supply easier to find, compare and buy.
@@ -615,18 +562,21 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="marketplace" className="mx-auto max-w-7xl px-5 py-20 md:px-8">
+      <section
+        id="marketplace"
+        className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20"
+      >
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div className="max-w-3xl">
-            <p className="text-sm font-black uppercase tracking-[0.22em] text-cyan-200">
+            <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-200 md:text-sm">
               Marketplace preview
             </p>
 
-            <h2 className="mt-4 text-4xl font-black tracking-[-0.05em] md:text-5xl">
+            <h2 className="mt-4 text-3xl font-black tracking-[-0.05em] md:text-5xl">
               Cruise deck seating, dining rooms, casino lots and ship interiors.
             </h2>
 
-            <p className="mt-6 text-lg leading-8 text-white/65">
+            <p className="mt-5 text-base leading-8 text-white/65 md:mt-6 md:text-lg">
               Every demo listing shows estimated new value, Salvage Harbor
               price, potential saving, origin, quantity, seller status and
               payment protection.
@@ -641,13 +591,13 @@ export default function Home() {
           </a>
         </div>
 
-        <div className="mt-12 grid gap-8 lg:grid-cols-2">
+        <div className="mt-10 grid gap-6 md:mt-12 md:gap-8 lg:grid-cols-2">
           {listings.map((listing) => (
             <article
               key={listing.title}
-              className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#0a171b] shadow-2xl shadow-black/20"
+              className="overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#0a171b] shadow-2xl shadow-black/20 md:rounded-[2rem]"
             >
-              <div className="relative h-80 overflow-hidden">
+              <div className="relative h-72 overflow-hidden md:h-80">
                 <img
                   src={listing.image}
                   alt={listing.title}
@@ -656,17 +606,17 @@ export default function Home() {
 
                 <div className="absolute inset-0 bg-gradient-to-t from-[#071013] via-[#071013]/10 to-transparent" />
 
-                <div className="absolute left-5 top-5 rounded-full bg-white px-4 py-1.5 text-xs font-black uppercase tracking-[0.18em] text-[#071013]">
+                <div className="absolute left-4 top-4 rounded-full bg-white px-4 py-1.5 text-xs font-black uppercase tracking-[0.18em] text-[#071013] md:left-5 md:top-5">
                   {listing.label}
                 </div>
               </div>
 
-              <div className="p-7">
+              <div className="p-5 md:p-7">
                 <p className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
                   {listing.category}
                 </p>
 
-                <h3 className="mt-3 text-3xl font-black tracking-[-0.05em]">
+                <h3 className="mt-3 text-2xl font-black tracking-[-0.05em] md:text-3xl">
                   {listing.title}
                 </h3>
 
@@ -770,17 +720,17 @@ export default function Home() {
       </section>
 
       <section className="border-y border-white/10 bg-[#0a171b]">
-        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-20 md:px-8 lg:grid-cols-[0.8fr_1.2fr]">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 md:px-8 md:py-20 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
-            <p className="text-sm font-black uppercase tracking-[0.22em] text-cyan-200">
+            <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-200 md:text-sm">
               Business model
             </p>
 
-            <h2 className="mt-4 text-4xl font-black tracking-[-0.05em] md:text-5xl">
+            <h2 className="mt-4 text-3xl font-black tracking-[-0.05em] md:text-5xl">
               Verified maritime sellers, secure payments and 10% commission.
             </h2>
 
-            <p className="mt-6 text-lg leading-8 text-white/65">
+            <p className="mt-5 text-base leading-8 text-white/65 md:mt-6 md:text-lg">
               Sellers can list high-value maritime inventory after verification.
               Buyers get clearer sourcing, better product information and more
               trust than buying from scattered listings across the internet.
@@ -823,7 +773,7 @@ export default function Home() {
             ].map((item) => (
               <div
                 key={item.title}
-                className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-6"
+                className="rounded-[1.75rem] border border-white/10 bg-white/[0.04] p-6 md:rounded-[2rem]"
               >
                 <h3 className="text-xl font-black tracking-[-0.04em]">
                   {item.title}
@@ -836,20 +786,23 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="sellers" className="mx-auto max-w-7xl px-5 py-20 md:px-8">
-        <div className="overflow-hidden rounded-[2.5rem] border border-cyan-300/20 bg-cyan-300 text-[#071013]">
-          <div className="grid gap-10 p-8 md:p-12 lg:grid-cols-[1fr_0.75fr]">
+      <section
+        id="sellers"
+        className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20"
+      >
+        <div className="overflow-hidden rounded-[2rem] border border-cyan-300/20 bg-cyan-300 text-[#071013] md:rounded-[2.5rem]">
+          <div className="grid gap-10 p-6 md:p-12 lg:grid-cols-[1fr_0.75fr]">
             <div>
               <p className="text-sm font-black uppercase tracking-[0.22em] opacity-60">
                 Apply as seller
               </p>
 
-              <h2 className="mt-4 text-4xl font-black tracking-[-0.06em] md:text-6xl">
+              <h2 className="mt-4 text-3xl font-black tracking-[-0.06em] md:text-6xl">
                 Have cruise chairs, casino equipment, bar furniture or ship
                 interior inventory?
               </h2>
 
-              <p className="mt-6 max-w-3xl text-lg leading-8 opacity-75">
+              <p className="mt-6 max-w-3xl text-base leading-8 opacity-75 md:text-lg">
                 Apply to sell on Salvage Harbor. We focus on authentic maritime
                 objects, cruise interiors, hospitality equipment, casino
                 furniture, bulk seating and rare design pieces with clear legal
@@ -871,4 +824,38 @@ export default function Home() {
             <div className="flex flex-col justify-end gap-4">
               <a
                 href={mailToSeller}
-                className="rounded-full bg-[#071013] px-7 py-4 text-center text-sm
+                className="rounded-full bg-[#071013] px-7 py-4 text-center text-sm font-black uppercase tracking-[0.16em] text-white transition hover:bg-[#10242a]"
+              >
+                Apply as verified seller
+              </a>
+
+              <a
+                href={mailToBuyer}
+                className="rounded-full border border-[#071013]/25 px-7 py-4 text-center text-sm font-black uppercase tracking-[0.16em] text-[#071013] transition hover:bg-[#071013]/10"
+              >
+                Send sourcing request
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer className="border-t border-white/10">
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-10 text-sm text-white/50 md:flex-row md:items-center md:justify-between md:px-8">
+          <p>© 2026 Salvage Harbor Europe</p>
+
+          <div className="flex flex-wrap gap-4">
+            <span>Maritime inventory only</span>
+            <span>Verified sellers</span>
+            <span>Secure payment protection</span>
+            <span>10% commission</span>
+
+            <a href={`mailto:${contactEmail}`} className="text-cyan-200">
+              {contactEmail}
+            </a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  );
+}
