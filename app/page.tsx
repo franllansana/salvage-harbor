@@ -1,10 +1,10 @@
 const contactEmail = "info@celaris.nl";
 
 const heroVideo =
-  "https://videos.pexels.com/video-files/7007353/7007353-hd_1920_1080_25fps.mp4";
+  "https://videos.pexels.com/video-files/4239913/4239913-uhd_3840_2160_30fps.mp4";
 
 const heroPoster =
-  "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1800&q=80";
+  "https://www.msccruises.com/int/-/media/global-contents/ships/fleet/armonia/restaurants-bars/bars/palm-beach-casino-bar-msc-armonia.jpg?as=1&bc=transparent&hash=5FEFF38A850A020708304E2772C972D2&mh=720&mw=920";
 
 const mailToSeller =
   "mailto:info@celaris.nl?subject=Salvage%20Harbor%20seller%20application";
@@ -355,11 +355,6 @@ export default function Home() {
                 </p>
               </div>
             </div>
-
-            <p className="mt-8 text-xs text-white/40">
-              Intro video source: Pexels luxury yacht interior. If the video
-              does not load, add your own file as /public/salvage-harbor-intro.mp4.
-            </p>
           </div>
         </div>
       </section>
@@ -698,6 +693,7 @@ export default function Home() {
                   <a
                     href={listing.source}
                     target="_blank"
+                    rel="noreferrer"
                     className="text-xs text-white/35 underline"
                   >
                     {listing.photo}
